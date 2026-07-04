@@ -1,0 +1,3437 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Admin RunTix",
+      "email": "admin@runtix.id",
+      "password_hash": "$2b$10$M2pzLK978OIlmJg5Y99bJeKTqptVPkG5lS3vYWJnSD5rxAxdYpZqG",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "name": "Budi Santoso",
+      "email": "budi@gmail.com",
+      "password_hash": "$2b$10$R/gSUvNOs8OvMKdzHbBAuuh/PefU37SCIaJQgi9nDLQKx5xv/l9N2",
+      "role": "user"
+    },
+    {
+      "id": 3,
+      "name": "Siti Aminah",
+      "email": "siti@gmail.com",
+      "password_hash": "$2b$10$R/gSUvNOs8OvMKdzHbBAuuh/PefU37SCIaJQgi9nDLQKx5xv/l9N2",
+      "role": "user"
+    },
+    {
+      "id": 4,
+      "name": "Rudi Hermawan",
+      "email": "rudi@gmail.com",
+      "password_hash": "$2b$10$R/gSUvNOs8OvMKdzHbBAuuh/PefU37SCIaJQgi9nDLQKx5xv/l9N2",
+      "role": "user"
+    },
+    {
+      "id": 5,
+      "name": "Dewi Lestari",
+      "email": "dewi@gmail.com",
+      "password_hash": "$2b$10$R/gSUvNOs8OvMKdzHbBAuuh/PefU37SCIaJQgi9nDLQKx5xv/l9N2",
+      "role": "user"
+    },
+    {
+      "id": 6,
+      "name": "Andi Wijaya",
+      "email": "andi@gmail.com",
+      "password_hash": "$2b$10$R/gSUvNOs8OvMKdzHbBAuuh/PefU37SCIaJQgi9nDLQKx5xv/l9N2",
+      "role": "user"
+    },
+    {
+      "id": 7,
+      "name": "Rian Hidayat",
+      "email": "rian@gmail.com",
+      "password_hash": "$2b$10$R/gSUvNOs8OvMKdzHbBAuuh/PefU37SCIaJQgi9nDLQKx5xv/l9N2",
+      "role": "user"
+    },
+    {
+      "id": 8,
+      "name": "Mega Putri",
+      "email": "mega@gmail.com",
+      "password_hash": "$2b$10$R/gSUvNOs8OvMKdzHbBAuuh/PefU37SCIaJQgi9nDLQKx5xv/l9N2",
+      "role": "user"
+    },
+    {
+      "id": 9,
+      "name": "Fajar Nugroho",
+      "email": "fajar@gmail.com",
+      "password_hash": "$2b$10$R/gSUvNOs8OvMKdzHbBAuuh/PefU37SCIaJQgi9nDLQKx5xv/l9N2",
+      "role": "user"
+    },
+    {
+      "id": 10,
+      "name": "Eko Prasetyo",
+      "email": "eko@gmail.com",
+      "password_hash": "$2b$10$R/gSUvNOs8OvMKdzHbBAuuh/PefU37SCIaJQgi9nDLQKx5xv/l9N2",
+      "role": "user"
+    },
+    {
+      "id": 11,
+      "name": "Novianti",
+      "email": "novi@gmail.com",
+      "password_hash": "$2b$10$R/gSUvNOs8OvMKdzHbBAuuh/PefU37SCIaJQgi9nDLQKx5xv/l9N2",
+      "role": "user"
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "title": "BTN Jakarta International Marathon 2026",
+      "description": "The premium international marathon running through the main landmarks of Jakarta, offering Full Marathon, Half Marathon, and 10K categories.",
+      "location": "Gelora Bung Karno Jakarta",
+      "date": "2026-06-14",
+      "price": 350000,
+      "max_participants": 500,
+      "current_participants": 100,
+      "image_url": "https://images.unsplash.com/photo-1530541930197-ff16ac917b0e?auto=format&fit=crop&q=80&w=600"
+    },
+    {
+      "id": 2,
+      "title": "Borobudur Marathon 2026",
+      "description": "Run through cultural heritage and scenic local villages around the majestic Borobudur Temple, experiencing deep local hospitality.",
+      "location": "Taman Lumbini Borobudur, Magelang",
+      "date": "2026-08-20",
+      "price": 250000,
+      "max_participants": 500,
+      "current_participants": 150,
+      "image_url": "https://images.unsplash.com/photo-1502224562085-639556652f33?auto=format&fit=crop&q=80&w=600"
+    },
+    {
+      "id": 3,
+      "title": "Semarang 10k 2026",
+      "description": "A nostalgic running journey exploring the historical Old Town (Kota Lama) of Semarang with unique culinary and cultural spots along the route.",
+      "location": "Balaikota Semarang",
+      "date": "2026-12-15",
+      "price": 150000,
+      "max_participants": 300,
+      "current_participants": 80,
+      "image_url": "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&q=80&w=600"
+    },
+    {
+      "id": 4,
+      "title": "Bandung Trail Run 2026",
+      "description": "A challenging yet beautiful off-road trail running event amidst the pine forests and refreshing mountains of Dago Pakar Bandung.",
+      "location": "Dago Pakar Bandung",
+      "date": "2026-10-10",
+      "price": 200000,
+      "max_participants": 200,
+      "current_participants": 50,
+      "image_url": "https://images.unsplash.com/photo-1532444458054-01a7dd3e9fca?auto=format&fit=crop&q=80&w=600"
+    },
+    {
+      "id": 5,
+      "title": "Bali Sunset Half Marathon 2026",
+      "description": "Run with the spectacular sunset view starting and finishing around the iconic GWK Cultural Park, with sea-breeze refreshing your path.",
+      "location": "GWK Cultural Park Bali",
+      "date": "2026-11-05",
+      "price": 250000,
+      "max_participants": 400,
+      "current_participants": 30,
+      "image_url": "https://images.unsplash.com/photo-1518063319789-7217e6706b04?auto=format&fit=crop&q=80&w=600"
+    }
+  ],
+  "expenses": [
+    {
+      "id": 1,
+      "description": "Social Media Ads & Digital Marketing",
+      "cost": 2000000
+    },
+    {
+      "id": 2,
+      "description": "Custom Domain & Cloud Web Hosting",
+      "cost": 500000
+    },
+    {
+      "id": 3,
+      "description": "Flyers & Physical Banner Printing",
+      "cost": 500000
+    }
+  ],
+  "tickets": [
+    {
+      "id": 1,
+      "user_id": 2,
+      "event_id": 1,
+      "purchase_date": "2026-06-01",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 2,
+      "user_id": 3,
+      "event_id": 1,
+      "purchase_date": "2026-06-02",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 3,
+      "user_id": 4,
+      "event_id": 1,
+      "purchase_date": "2026-06-03",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 4,
+      "user_id": 5,
+      "event_id": 1,
+      "purchase_date": "2026-06-04",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 5,
+      "user_id": 6,
+      "event_id": 1,
+      "purchase_date": "2026-06-05",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 6,
+      "user_id": 7,
+      "event_id": 1,
+      "purchase_date": "2026-06-06",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 7,
+      "user_id": 8,
+      "event_id": 1,
+      "purchase_date": "2026-06-07",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 8,
+      "user_id": 9,
+      "event_id": 1,
+      "purchase_date": "2026-06-08",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 9,
+      "user_id": 10,
+      "event_id": 1,
+      "purchase_date": "2026-06-09",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 10,
+      "user_id": 11,
+      "event_id": 1,
+      "purchase_date": "2026-06-10",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 11,
+      "user_id": 2,
+      "event_id": 1,
+      "purchase_date": "2026-06-11",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 12,
+      "user_id": 3,
+      "event_id": 1,
+      "purchase_date": "2026-06-12",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 13,
+      "user_id": 4,
+      "event_id": 1,
+      "purchase_date": "2026-06-13",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 14,
+      "user_id": 5,
+      "event_id": 1,
+      "purchase_date": "2026-06-14",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 15,
+      "user_id": 6,
+      "event_id": 1,
+      "purchase_date": "2026-06-15",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 16,
+      "user_id": 7,
+      "event_id": 1,
+      "purchase_date": "2026-06-16",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 17,
+      "user_id": 8,
+      "event_id": 1,
+      "purchase_date": "2026-06-17",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 18,
+      "user_id": 9,
+      "event_id": 1,
+      "purchase_date": "2026-06-18",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 19,
+      "user_id": 10,
+      "event_id": 1,
+      "purchase_date": "2026-06-19",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 20,
+      "user_id": 11,
+      "event_id": 1,
+      "purchase_date": "2026-06-20",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 21,
+      "user_id": 2,
+      "event_id": 1,
+      "purchase_date": "2026-06-21",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 22,
+      "user_id": 3,
+      "event_id": 1,
+      "purchase_date": "2026-06-22",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 23,
+      "user_id": 4,
+      "event_id": 1,
+      "purchase_date": "2026-06-23",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 24,
+      "user_id": 5,
+      "event_id": 1,
+      "purchase_date": "2026-06-24",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 25,
+      "user_id": 6,
+      "event_id": 1,
+      "purchase_date": "2026-06-25",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 26,
+      "user_id": 7,
+      "event_id": 1,
+      "purchase_date": "2026-06-26",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 27,
+      "user_id": 8,
+      "event_id": 1,
+      "purchase_date": "2026-06-27",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 28,
+      "user_id": 9,
+      "event_id": 1,
+      "purchase_date": "2026-06-28",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 29,
+      "user_id": 10,
+      "event_id": 1,
+      "purchase_date": "2026-06-29",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 30,
+      "user_id": 11,
+      "event_id": 1,
+      "purchase_date": "2026-06-30",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 31,
+      "user_id": 2,
+      "event_id": 1,
+      "purchase_date": "2026-06-01",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 32,
+      "user_id": 3,
+      "event_id": 1,
+      "purchase_date": "2026-06-02",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 33,
+      "user_id": 4,
+      "event_id": 1,
+      "purchase_date": "2026-06-03",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 34,
+      "user_id": 5,
+      "event_id": 1,
+      "purchase_date": "2026-06-04",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 35,
+      "user_id": 6,
+      "event_id": 1,
+      "purchase_date": "2026-06-05",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 36,
+      "user_id": 7,
+      "event_id": 1,
+      "purchase_date": "2026-06-06",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 37,
+      "user_id": 8,
+      "event_id": 1,
+      "purchase_date": "2026-06-07",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 38,
+      "user_id": 9,
+      "event_id": 1,
+      "purchase_date": "2026-06-08",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 39,
+      "user_id": 10,
+      "event_id": 1,
+      "purchase_date": "2026-06-09",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 40,
+      "user_id": 11,
+      "event_id": 1,
+      "purchase_date": "2026-06-10",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 41,
+      "user_id": 2,
+      "event_id": 1,
+      "purchase_date": "2026-06-11",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 42,
+      "user_id": 3,
+      "event_id": 1,
+      "purchase_date": "2026-06-12",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 43,
+      "user_id": 4,
+      "event_id": 1,
+      "purchase_date": "2026-06-13",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 44,
+      "user_id": 5,
+      "event_id": 1,
+      "purchase_date": "2026-06-14",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 45,
+      "user_id": 6,
+      "event_id": 1,
+      "purchase_date": "2026-06-15",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 46,
+      "user_id": 7,
+      "event_id": 1,
+      "purchase_date": "2026-06-16",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 47,
+      "user_id": 8,
+      "event_id": 1,
+      "purchase_date": "2026-06-17",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 48,
+      "user_id": 9,
+      "event_id": 1,
+      "purchase_date": "2026-06-18",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 49,
+      "user_id": 10,
+      "event_id": 1,
+      "purchase_date": "2026-06-19",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 50,
+      "user_id": 11,
+      "event_id": 1,
+      "purchase_date": "2026-06-20",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 51,
+      "user_id": 2,
+      "event_id": 1,
+      "purchase_date": "2026-06-21",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 52,
+      "user_id": 3,
+      "event_id": 1,
+      "purchase_date": "2026-06-22",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 53,
+      "user_id": 4,
+      "event_id": 1,
+      "purchase_date": "2026-06-23",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 54,
+      "user_id": 5,
+      "event_id": 1,
+      "purchase_date": "2026-06-24",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 55,
+      "user_id": 6,
+      "event_id": 1,
+      "purchase_date": "2026-06-25",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 56,
+      "user_id": 7,
+      "event_id": 1,
+      "purchase_date": "2026-06-26",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 57,
+      "user_id": 8,
+      "event_id": 1,
+      "purchase_date": "2026-06-27",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 58,
+      "user_id": 9,
+      "event_id": 1,
+      "purchase_date": "2026-06-28",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 59,
+      "user_id": 10,
+      "event_id": 1,
+      "purchase_date": "2026-06-29",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 60,
+      "user_id": 11,
+      "event_id": 1,
+      "purchase_date": "2026-06-30",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 61,
+      "user_id": 2,
+      "event_id": 1,
+      "purchase_date": "2026-06-01",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 62,
+      "user_id": 3,
+      "event_id": 1,
+      "purchase_date": "2026-06-02",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 63,
+      "user_id": 4,
+      "event_id": 1,
+      "purchase_date": "2026-06-03",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 64,
+      "user_id": 5,
+      "event_id": 1,
+      "purchase_date": "2026-06-04",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 65,
+      "user_id": 6,
+      "event_id": 1,
+      "purchase_date": "2026-06-05",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 66,
+      "user_id": 7,
+      "event_id": 1,
+      "purchase_date": "2026-06-06",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 67,
+      "user_id": 8,
+      "event_id": 1,
+      "purchase_date": "2026-06-07",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 68,
+      "user_id": 9,
+      "event_id": 1,
+      "purchase_date": "2026-06-08",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 69,
+      "user_id": 10,
+      "event_id": 1,
+      "purchase_date": "2026-06-09",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 70,
+      "user_id": 11,
+      "event_id": 1,
+      "purchase_date": "2026-06-10",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 71,
+      "user_id": 2,
+      "event_id": 1,
+      "purchase_date": "2026-06-11",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 72,
+      "user_id": 3,
+      "event_id": 1,
+      "purchase_date": "2026-06-12",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 73,
+      "user_id": 4,
+      "event_id": 1,
+      "purchase_date": "2026-06-13",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 74,
+      "user_id": 5,
+      "event_id": 1,
+      "purchase_date": "2026-06-14",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 75,
+      "user_id": 6,
+      "event_id": 1,
+      "purchase_date": "2026-06-15",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 76,
+      "user_id": 7,
+      "event_id": 1,
+      "purchase_date": "2026-06-16",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 77,
+      "user_id": 8,
+      "event_id": 1,
+      "purchase_date": "2026-06-17",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 78,
+      "user_id": 9,
+      "event_id": 1,
+      "purchase_date": "2026-06-18",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 79,
+      "user_id": 10,
+      "event_id": 1,
+      "purchase_date": "2026-06-19",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 80,
+      "user_id": 11,
+      "event_id": 1,
+      "purchase_date": "2026-06-20",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 81,
+      "user_id": 2,
+      "event_id": 1,
+      "purchase_date": "2026-06-21",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 82,
+      "user_id": 3,
+      "event_id": 1,
+      "purchase_date": "2026-06-22",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 83,
+      "user_id": 4,
+      "event_id": 1,
+      "purchase_date": "2026-06-23",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 84,
+      "user_id": 5,
+      "event_id": 1,
+      "purchase_date": "2026-06-24",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 85,
+      "user_id": 6,
+      "event_id": 1,
+      "purchase_date": "2026-06-25",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 86,
+      "user_id": 7,
+      "event_id": 1,
+      "purchase_date": "2026-06-26",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 87,
+      "user_id": 8,
+      "event_id": 1,
+      "purchase_date": "2026-06-27",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 88,
+      "user_id": 9,
+      "event_id": 1,
+      "purchase_date": "2026-06-28",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 89,
+      "user_id": 10,
+      "event_id": 1,
+      "purchase_date": "2026-06-29",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 90,
+      "user_id": 11,
+      "event_id": 1,
+      "purchase_date": "2026-06-30",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 91,
+      "user_id": 2,
+      "event_id": 1,
+      "purchase_date": "2026-06-01",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 92,
+      "user_id": 3,
+      "event_id": 1,
+      "purchase_date": "2026-06-02",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 93,
+      "user_id": 4,
+      "event_id": 1,
+      "purchase_date": "2026-06-03",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 94,
+      "user_id": 5,
+      "event_id": 1,
+      "purchase_date": "2026-06-04",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 95,
+      "user_id": 6,
+      "event_id": 1,
+      "purchase_date": "2026-06-05",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 96,
+      "user_id": 7,
+      "event_id": 1,
+      "purchase_date": "2026-06-06",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 97,
+      "user_id": 8,
+      "event_id": 1,
+      "purchase_date": "2026-06-07",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 98,
+      "user_id": 9,
+      "event_id": 1,
+      "purchase_date": "2026-06-08",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 99,
+      "user_id": 10,
+      "event_id": 1,
+      "purchase_date": "2026-06-09",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 100,
+      "user_id": 11,
+      "event_id": 1,
+      "purchase_date": "2026-06-10",
+      "total_price": 350000,
+      "status": "paid"
+    },
+    {
+      "id": 101,
+      "user_id": 2,
+      "event_id": 2,
+      "purchase_date": "2026-05-01",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 102,
+      "user_id": 3,
+      "event_id": 2,
+      "purchase_date": "2026-05-02",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 103,
+      "user_id": 4,
+      "event_id": 2,
+      "purchase_date": "2026-05-03",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 104,
+      "user_id": 5,
+      "event_id": 2,
+      "purchase_date": "2026-05-04",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 105,
+      "user_id": 6,
+      "event_id": 2,
+      "purchase_date": "2026-05-05",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 106,
+      "user_id": 7,
+      "event_id": 2,
+      "purchase_date": "2026-05-06",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 107,
+      "user_id": 8,
+      "event_id": 2,
+      "purchase_date": "2026-05-07",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 108,
+      "user_id": 9,
+      "event_id": 2,
+      "purchase_date": "2026-05-08",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 109,
+      "user_id": 10,
+      "event_id": 2,
+      "purchase_date": "2026-06-09",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 110,
+      "user_id": 11,
+      "event_id": 2,
+      "purchase_date": "2026-06-10",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 111,
+      "user_id": 2,
+      "event_id": 2,
+      "purchase_date": "2026-06-11",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 112,
+      "user_id": 3,
+      "event_id": 2,
+      "purchase_date": "2026-06-12",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 113,
+      "user_id": 4,
+      "event_id": 2,
+      "purchase_date": "2026-06-13",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 114,
+      "user_id": 5,
+      "event_id": 2,
+      "purchase_date": "2026-06-14",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 115,
+      "user_id": 6,
+      "event_id": 2,
+      "purchase_date": "2026-06-15",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 116,
+      "user_id": 7,
+      "event_id": 2,
+      "purchase_date": "2026-06-16",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 117,
+      "user_id": 8,
+      "event_id": 2,
+      "purchase_date": "2026-06-17",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 118,
+      "user_id": 9,
+      "event_id": 2,
+      "purchase_date": "2026-06-18",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 119,
+      "user_id": 10,
+      "event_id": 2,
+      "purchase_date": "2026-06-19",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 120,
+      "user_id": 11,
+      "event_id": 2,
+      "purchase_date": "2026-06-20",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 121,
+      "user_id": 2,
+      "event_id": 2,
+      "purchase_date": "2026-06-21",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 122,
+      "user_id": 3,
+      "event_id": 2,
+      "purchase_date": "2026-06-22",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 123,
+      "user_id": 4,
+      "event_id": 2,
+      "purchase_date": "2026-06-23",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 124,
+      "user_id": 5,
+      "event_id": 2,
+      "purchase_date": "2026-06-24",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 125,
+      "user_id": 6,
+      "event_id": 2,
+      "purchase_date": "2026-06-25",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 126,
+      "user_id": 7,
+      "event_id": 2,
+      "purchase_date": "2026-06-26",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 127,
+      "user_id": 8,
+      "event_id": 2,
+      "purchase_date": "2026-06-27",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 128,
+      "user_id": 9,
+      "event_id": 2,
+      "purchase_date": "2026-06-28",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 129,
+      "user_id": 10,
+      "event_id": 2,
+      "purchase_date": "2026-06-29",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 130,
+      "user_id": 11,
+      "event_id": 2,
+      "purchase_date": "2026-06-30",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 131,
+      "user_id": 2,
+      "event_id": 2,
+      "purchase_date": "2026-06-01",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 132,
+      "user_id": 3,
+      "event_id": 2,
+      "purchase_date": "2026-06-02",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 133,
+      "user_id": 4,
+      "event_id": 2,
+      "purchase_date": "2026-06-03",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 134,
+      "user_id": 5,
+      "event_id": 2,
+      "purchase_date": "2026-06-04",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 135,
+      "user_id": 6,
+      "event_id": 2,
+      "purchase_date": "2026-06-05",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 136,
+      "user_id": 7,
+      "event_id": 2,
+      "purchase_date": "2026-06-06",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 137,
+      "user_id": 8,
+      "event_id": 2,
+      "purchase_date": "2026-06-07",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 138,
+      "user_id": 9,
+      "event_id": 2,
+      "purchase_date": "2026-06-08",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 139,
+      "user_id": 10,
+      "event_id": 2,
+      "purchase_date": "2026-06-09",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 140,
+      "user_id": 11,
+      "event_id": 2,
+      "purchase_date": "2026-06-10",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 141,
+      "user_id": 2,
+      "event_id": 2,
+      "purchase_date": "2026-06-11",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 142,
+      "user_id": 3,
+      "event_id": 2,
+      "purchase_date": "2026-06-12",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 143,
+      "user_id": 4,
+      "event_id": 2,
+      "purchase_date": "2026-06-13",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 144,
+      "user_id": 5,
+      "event_id": 2,
+      "purchase_date": "2026-06-14",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 145,
+      "user_id": 6,
+      "event_id": 2,
+      "purchase_date": "2026-06-15",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 146,
+      "user_id": 7,
+      "event_id": 2,
+      "purchase_date": "2026-06-16",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 147,
+      "user_id": 8,
+      "event_id": 2,
+      "purchase_date": "2026-06-17",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 148,
+      "user_id": 9,
+      "event_id": 2,
+      "purchase_date": "2026-06-18",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 149,
+      "user_id": 10,
+      "event_id": 2,
+      "purchase_date": "2026-06-19",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 150,
+      "user_id": 11,
+      "event_id": 2,
+      "purchase_date": "2026-06-20",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 151,
+      "user_id": 2,
+      "event_id": 2,
+      "purchase_date": "2026-06-21",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 152,
+      "user_id": 3,
+      "event_id": 2,
+      "purchase_date": "2026-06-22",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 153,
+      "user_id": 4,
+      "event_id": 2,
+      "purchase_date": "2026-06-23",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 154,
+      "user_id": 5,
+      "event_id": 2,
+      "purchase_date": "2026-06-24",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 155,
+      "user_id": 6,
+      "event_id": 2,
+      "purchase_date": "2026-06-25",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 156,
+      "user_id": 7,
+      "event_id": 2,
+      "purchase_date": "2026-06-26",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 157,
+      "user_id": 8,
+      "event_id": 2,
+      "purchase_date": "2026-06-27",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 158,
+      "user_id": 9,
+      "event_id": 2,
+      "purchase_date": "2026-06-28",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 159,
+      "user_id": 10,
+      "event_id": 2,
+      "purchase_date": "2026-06-29",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 160,
+      "user_id": 11,
+      "event_id": 2,
+      "purchase_date": "2026-06-30",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 161,
+      "user_id": 2,
+      "event_id": 2,
+      "purchase_date": "2026-06-01",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 162,
+      "user_id": 3,
+      "event_id": 2,
+      "purchase_date": "2026-06-02",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 163,
+      "user_id": 4,
+      "event_id": 2,
+      "purchase_date": "2026-06-03",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 164,
+      "user_id": 5,
+      "event_id": 2,
+      "purchase_date": "2026-06-04",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 165,
+      "user_id": 6,
+      "event_id": 2,
+      "purchase_date": "2026-06-05",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 166,
+      "user_id": 7,
+      "event_id": 2,
+      "purchase_date": "2026-06-06",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 167,
+      "user_id": 8,
+      "event_id": 2,
+      "purchase_date": "2026-06-07",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 168,
+      "user_id": 9,
+      "event_id": 2,
+      "purchase_date": "2026-06-08",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 169,
+      "user_id": 10,
+      "event_id": 2,
+      "purchase_date": "2026-06-09",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 170,
+      "user_id": 11,
+      "event_id": 2,
+      "purchase_date": "2026-06-10",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 171,
+      "user_id": 2,
+      "event_id": 2,
+      "purchase_date": "2026-06-11",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 172,
+      "user_id": 3,
+      "event_id": 2,
+      "purchase_date": "2026-06-12",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 173,
+      "user_id": 4,
+      "event_id": 2,
+      "purchase_date": "2026-06-13",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 174,
+      "user_id": 5,
+      "event_id": 2,
+      "purchase_date": "2026-06-14",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 175,
+      "user_id": 6,
+      "event_id": 2,
+      "purchase_date": "2026-06-15",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 176,
+      "user_id": 7,
+      "event_id": 2,
+      "purchase_date": "2026-06-16",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 177,
+      "user_id": 8,
+      "event_id": 2,
+      "purchase_date": "2026-06-17",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 178,
+      "user_id": 9,
+      "event_id": 2,
+      "purchase_date": "2026-06-18",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 179,
+      "user_id": 10,
+      "event_id": 2,
+      "purchase_date": "2026-06-19",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 180,
+      "user_id": 11,
+      "event_id": 2,
+      "purchase_date": "2026-06-20",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 181,
+      "user_id": 2,
+      "event_id": 2,
+      "purchase_date": "2026-06-21",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 182,
+      "user_id": 3,
+      "event_id": 2,
+      "purchase_date": "2026-06-22",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 183,
+      "user_id": 4,
+      "event_id": 2,
+      "purchase_date": "2026-06-23",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 184,
+      "user_id": 5,
+      "event_id": 2,
+      "purchase_date": "2026-06-24",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 185,
+      "user_id": 6,
+      "event_id": 2,
+      "purchase_date": "2026-06-25",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 186,
+      "user_id": 7,
+      "event_id": 2,
+      "purchase_date": "2026-06-26",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 187,
+      "user_id": 8,
+      "event_id": 2,
+      "purchase_date": "2026-06-27",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 188,
+      "user_id": 9,
+      "event_id": 2,
+      "purchase_date": "2026-06-28",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 189,
+      "user_id": 10,
+      "event_id": 2,
+      "purchase_date": "2026-06-29",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 190,
+      "user_id": 11,
+      "event_id": 2,
+      "purchase_date": "2026-06-30",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 191,
+      "user_id": 2,
+      "event_id": 2,
+      "purchase_date": "2026-06-01",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 192,
+      "user_id": 3,
+      "event_id": 2,
+      "purchase_date": "2026-06-02",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 193,
+      "user_id": 4,
+      "event_id": 2,
+      "purchase_date": "2026-06-03",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 194,
+      "user_id": 5,
+      "event_id": 2,
+      "purchase_date": "2026-06-04",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 195,
+      "user_id": 6,
+      "event_id": 2,
+      "purchase_date": "2026-06-05",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 196,
+      "user_id": 7,
+      "event_id": 2,
+      "purchase_date": "2026-06-06",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 197,
+      "user_id": 8,
+      "event_id": 2,
+      "purchase_date": "2026-06-07",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 198,
+      "user_id": 9,
+      "event_id": 2,
+      "purchase_date": "2026-06-08",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 199,
+      "user_id": 10,
+      "event_id": 2,
+      "purchase_date": "2026-06-09",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 200,
+      "user_id": 11,
+      "event_id": 2,
+      "purchase_date": "2026-06-10",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 201,
+      "user_id": 2,
+      "event_id": 2,
+      "purchase_date": "2026-06-11",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 202,
+      "user_id": 3,
+      "event_id": 2,
+      "purchase_date": "2026-06-12",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 203,
+      "user_id": 4,
+      "event_id": 2,
+      "purchase_date": "2026-06-13",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 204,
+      "user_id": 5,
+      "event_id": 2,
+      "purchase_date": "2026-06-14",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 205,
+      "user_id": 6,
+      "event_id": 2,
+      "purchase_date": "2026-06-15",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 206,
+      "user_id": 7,
+      "event_id": 2,
+      "purchase_date": "2026-06-16",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 207,
+      "user_id": 8,
+      "event_id": 2,
+      "purchase_date": "2026-06-17",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 208,
+      "user_id": 9,
+      "event_id": 2,
+      "purchase_date": "2026-06-18",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 209,
+      "user_id": 10,
+      "event_id": 2,
+      "purchase_date": "2026-06-19",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 210,
+      "user_id": 11,
+      "event_id": 2,
+      "purchase_date": "2026-06-20",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 211,
+      "user_id": 2,
+      "event_id": 2,
+      "purchase_date": "2026-06-21",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 212,
+      "user_id": 3,
+      "event_id": 2,
+      "purchase_date": "2026-06-22",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 213,
+      "user_id": 4,
+      "event_id": 2,
+      "purchase_date": "2026-06-23",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 214,
+      "user_id": 5,
+      "event_id": 2,
+      "purchase_date": "2026-06-24",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 215,
+      "user_id": 6,
+      "event_id": 2,
+      "purchase_date": "2026-06-25",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 216,
+      "user_id": 7,
+      "event_id": 2,
+      "purchase_date": "2026-06-26",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 217,
+      "user_id": 8,
+      "event_id": 2,
+      "purchase_date": "2026-06-27",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 218,
+      "user_id": 9,
+      "event_id": 2,
+      "purchase_date": "2026-06-28",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 219,
+      "user_id": 10,
+      "event_id": 2,
+      "purchase_date": "2026-06-29",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 220,
+      "user_id": 11,
+      "event_id": 2,
+      "purchase_date": "2026-06-30",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 221,
+      "user_id": 2,
+      "event_id": 2,
+      "purchase_date": "2026-06-01",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 222,
+      "user_id": 3,
+      "event_id": 2,
+      "purchase_date": "2026-06-02",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 223,
+      "user_id": 4,
+      "event_id": 2,
+      "purchase_date": "2026-06-03",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 224,
+      "user_id": 5,
+      "event_id": 2,
+      "purchase_date": "2026-06-04",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 225,
+      "user_id": 6,
+      "event_id": 2,
+      "purchase_date": "2026-06-05",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 226,
+      "user_id": 7,
+      "event_id": 2,
+      "purchase_date": "2026-06-06",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 227,
+      "user_id": 8,
+      "event_id": 2,
+      "purchase_date": "2026-06-07",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 228,
+      "user_id": 9,
+      "event_id": 2,
+      "purchase_date": "2026-06-08",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 229,
+      "user_id": 10,
+      "event_id": 2,
+      "purchase_date": "2026-06-09",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 230,
+      "user_id": 11,
+      "event_id": 2,
+      "purchase_date": "2026-06-10",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 231,
+      "user_id": 2,
+      "event_id": 2,
+      "purchase_date": "2026-06-11",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 232,
+      "user_id": 3,
+      "event_id": 2,
+      "purchase_date": "2026-06-12",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 233,
+      "user_id": 4,
+      "event_id": 2,
+      "purchase_date": "2026-06-13",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 234,
+      "user_id": 5,
+      "event_id": 2,
+      "purchase_date": "2026-06-14",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 235,
+      "user_id": 6,
+      "event_id": 2,
+      "purchase_date": "2026-06-15",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 236,
+      "user_id": 7,
+      "event_id": 2,
+      "purchase_date": "2026-06-16",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 237,
+      "user_id": 8,
+      "event_id": 2,
+      "purchase_date": "2026-06-17",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 238,
+      "user_id": 9,
+      "event_id": 2,
+      "purchase_date": "2026-06-18",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 239,
+      "user_id": 10,
+      "event_id": 2,
+      "purchase_date": "2026-06-19",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 240,
+      "user_id": 11,
+      "event_id": 2,
+      "purchase_date": "2026-06-20",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 241,
+      "user_id": 2,
+      "event_id": 2,
+      "purchase_date": "2026-06-21",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 242,
+      "user_id": 3,
+      "event_id": 2,
+      "purchase_date": "2026-06-22",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 243,
+      "user_id": 4,
+      "event_id": 2,
+      "purchase_date": "2026-06-23",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 244,
+      "user_id": 5,
+      "event_id": 2,
+      "purchase_date": "2026-06-24",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 245,
+      "user_id": 6,
+      "event_id": 2,
+      "purchase_date": "2026-06-25",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 246,
+      "user_id": 7,
+      "event_id": 2,
+      "purchase_date": "2026-06-26",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 247,
+      "user_id": 8,
+      "event_id": 2,
+      "purchase_date": "2026-06-27",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 248,
+      "user_id": 9,
+      "event_id": 2,
+      "purchase_date": "2026-06-28",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 249,
+      "user_id": 10,
+      "event_id": 2,
+      "purchase_date": "2026-06-29",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 250,
+      "user_id": 11,
+      "event_id": 2,
+      "purchase_date": "2026-06-30",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 251,
+      "user_id": 2,
+      "event_id": 3,
+      "purchase_date": "2026-06-01",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 252,
+      "user_id": 3,
+      "event_id": 3,
+      "purchase_date": "2026-06-02",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 253,
+      "user_id": 4,
+      "event_id": 3,
+      "purchase_date": "2026-06-03",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 254,
+      "user_id": 5,
+      "event_id": 3,
+      "purchase_date": "2026-06-04",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 255,
+      "user_id": 6,
+      "event_id": 3,
+      "purchase_date": "2026-06-05",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 256,
+      "user_id": 7,
+      "event_id": 3,
+      "purchase_date": "2026-06-06",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 257,
+      "user_id": 8,
+      "event_id": 3,
+      "purchase_date": "2026-06-07",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 258,
+      "user_id": 9,
+      "event_id": 3,
+      "purchase_date": "2026-06-08",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 259,
+      "user_id": 10,
+      "event_id": 3,
+      "purchase_date": "2026-06-09",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 260,
+      "user_id": 11,
+      "event_id": 3,
+      "purchase_date": "2026-06-10",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 261,
+      "user_id": 2,
+      "event_id": 3,
+      "purchase_date": "2026-06-11",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 262,
+      "user_id": 3,
+      "event_id": 3,
+      "purchase_date": "2026-06-12",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 263,
+      "user_id": 4,
+      "event_id": 3,
+      "purchase_date": "2026-06-13",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 264,
+      "user_id": 5,
+      "event_id": 3,
+      "purchase_date": "2026-06-14",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 265,
+      "user_id": 6,
+      "event_id": 3,
+      "purchase_date": "2026-06-15",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 266,
+      "user_id": 7,
+      "event_id": 3,
+      "purchase_date": "2026-06-16",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 267,
+      "user_id": 8,
+      "event_id": 3,
+      "purchase_date": "2026-06-17",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 268,
+      "user_id": 9,
+      "event_id": 3,
+      "purchase_date": "2026-06-18",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 269,
+      "user_id": 10,
+      "event_id": 3,
+      "purchase_date": "2026-06-19",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 270,
+      "user_id": 11,
+      "event_id": 3,
+      "purchase_date": "2026-06-20",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 271,
+      "user_id": 2,
+      "event_id": 3,
+      "purchase_date": "2026-06-21",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 272,
+      "user_id": 3,
+      "event_id": 3,
+      "purchase_date": "2026-06-22",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 273,
+      "user_id": 4,
+      "event_id": 3,
+      "purchase_date": "2026-06-23",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 274,
+      "user_id": 5,
+      "event_id": 3,
+      "purchase_date": "2026-06-24",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 275,
+      "user_id": 6,
+      "event_id": 3,
+      "purchase_date": "2026-06-25",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 276,
+      "user_id": 7,
+      "event_id": 3,
+      "purchase_date": "2026-06-26",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 277,
+      "user_id": 8,
+      "event_id": 3,
+      "purchase_date": "2026-06-27",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 278,
+      "user_id": 9,
+      "event_id": 3,
+      "purchase_date": "2026-06-28",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 279,
+      "user_id": 10,
+      "event_id": 3,
+      "purchase_date": "2026-06-29",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 280,
+      "user_id": 11,
+      "event_id": 3,
+      "purchase_date": "2026-06-30",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 281,
+      "user_id": 2,
+      "event_id": 3,
+      "purchase_date": "2026-06-01",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 282,
+      "user_id": 3,
+      "event_id": 3,
+      "purchase_date": "2026-06-02",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 283,
+      "user_id": 4,
+      "event_id": 3,
+      "purchase_date": "2026-06-03",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 284,
+      "user_id": 5,
+      "event_id": 3,
+      "purchase_date": "2026-06-04",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 285,
+      "user_id": 6,
+      "event_id": 3,
+      "purchase_date": "2026-06-05",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 286,
+      "user_id": 7,
+      "event_id": 3,
+      "purchase_date": "2026-06-06",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 287,
+      "user_id": 8,
+      "event_id": 3,
+      "purchase_date": "2026-06-07",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 288,
+      "user_id": 9,
+      "event_id": 3,
+      "purchase_date": "2026-06-08",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 289,
+      "user_id": 10,
+      "event_id": 3,
+      "purchase_date": "2026-06-09",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 290,
+      "user_id": 11,
+      "event_id": 3,
+      "purchase_date": "2026-06-10",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 291,
+      "user_id": 2,
+      "event_id": 3,
+      "purchase_date": "2026-06-11",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 292,
+      "user_id": 3,
+      "event_id": 3,
+      "purchase_date": "2026-06-12",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 293,
+      "user_id": 4,
+      "event_id": 3,
+      "purchase_date": "2026-06-13",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 294,
+      "user_id": 5,
+      "event_id": 3,
+      "purchase_date": "2026-06-14",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 295,
+      "user_id": 6,
+      "event_id": 3,
+      "purchase_date": "2026-06-15",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 296,
+      "user_id": 7,
+      "event_id": 3,
+      "purchase_date": "2026-06-16",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 297,
+      "user_id": 8,
+      "event_id": 3,
+      "purchase_date": "2026-06-17",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 298,
+      "user_id": 9,
+      "event_id": 3,
+      "purchase_date": "2026-06-18",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 299,
+      "user_id": 10,
+      "event_id": 3,
+      "purchase_date": "2026-06-19",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 300,
+      "user_id": 11,
+      "event_id": 3,
+      "purchase_date": "2026-06-20",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 301,
+      "user_id": 2,
+      "event_id": 3,
+      "purchase_date": "2026-06-21",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 302,
+      "user_id": 3,
+      "event_id": 3,
+      "purchase_date": "2026-06-22",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 303,
+      "user_id": 4,
+      "event_id": 3,
+      "purchase_date": "2026-06-23",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 304,
+      "user_id": 5,
+      "event_id": 3,
+      "purchase_date": "2026-06-24",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 305,
+      "user_id": 6,
+      "event_id": 3,
+      "purchase_date": "2026-06-25",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 306,
+      "user_id": 7,
+      "event_id": 3,
+      "purchase_date": "2026-06-26",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 307,
+      "user_id": 8,
+      "event_id": 3,
+      "purchase_date": "2026-06-27",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 308,
+      "user_id": 9,
+      "event_id": 3,
+      "purchase_date": "2026-06-28",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 309,
+      "user_id": 10,
+      "event_id": 3,
+      "purchase_date": "2026-06-29",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 310,
+      "user_id": 11,
+      "event_id": 3,
+      "purchase_date": "2026-06-30",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 311,
+      "user_id": 2,
+      "event_id": 3,
+      "purchase_date": "2026-06-01",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 312,
+      "user_id": 3,
+      "event_id": 3,
+      "purchase_date": "2026-06-02",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 313,
+      "user_id": 4,
+      "event_id": 3,
+      "purchase_date": "2026-06-03",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 314,
+      "user_id": 5,
+      "event_id": 3,
+      "purchase_date": "2026-06-04",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 315,
+      "user_id": 6,
+      "event_id": 3,
+      "purchase_date": "2026-06-05",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 316,
+      "user_id": 7,
+      "event_id": 3,
+      "purchase_date": "2026-06-06",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 317,
+      "user_id": 8,
+      "event_id": 3,
+      "purchase_date": "2026-06-07",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 318,
+      "user_id": 9,
+      "event_id": 3,
+      "purchase_date": "2026-06-08",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 319,
+      "user_id": 10,
+      "event_id": 3,
+      "purchase_date": "2026-06-09",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 320,
+      "user_id": 11,
+      "event_id": 3,
+      "purchase_date": "2026-06-10",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 321,
+      "user_id": 2,
+      "event_id": 3,
+      "purchase_date": "2026-06-11",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 322,
+      "user_id": 3,
+      "event_id": 3,
+      "purchase_date": "2026-06-12",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 323,
+      "user_id": 4,
+      "event_id": 3,
+      "purchase_date": "2026-06-13",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 324,
+      "user_id": 5,
+      "event_id": 3,
+      "purchase_date": "2026-06-14",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 325,
+      "user_id": 6,
+      "event_id": 3,
+      "purchase_date": "2026-06-15",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 326,
+      "user_id": 7,
+      "event_id": 3,
+      "purchase_date": "2026-06-16",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 327,
+      "user_id": 8,
+      "event_id": 3,
+      "purchase_date": "2026-06-17",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 328,
+      "user_id": 9,
+      "event_id": 3,
+      "purchase_date": "2026-06-18",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 329,
+      "user_id": 10,
+      "event_id": 3,
+      "purchase_date": "2026-06-19",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 330,
+      "user_id": 11,
+      "event_id": 3,
+      "purchase_date": "2026-06-20",
+      "total_price": 150000,
+      "status": "paid"
+    },
+    {
+      "id": 331,
+      "user_id": 2,
+      "event_id": 4,
+      "purchase_date": "2026-06-01",
+      "total_price": 200000,
+      "status": "paid"
+    },
+    {
+      "id": 332,
+      "user_id": 3,
+      "event_id": 4,
+      "purchase_date": "2026-06-02",
+      "total_price": 200000,
+      "status": "paid"
+    },
+    {
+      "id": 333,
+      "user_id": 4,
+      "event_id": 4,
+      "purchase_date": "2026-06-03",
+      "total_price": 200000,
+      "status": "paid"
+    },
+    {
+      "id": 334,
+      "user_id": 5,
+      "event_id": 4,
+      "purchase_date": "2026-06-04",
+      "total_price": 200000,
+      "status": "paid"
+    },
+    {
+      "id": 335,
+      "user_id": 6,
+      "event_id": 4,
+      "purchase_date": "2026-06-05",
+      "total_price": 200000,
+      "status": "paid"
+    },
+    {
+      "id": 336,
+      "user_id": 7,
+      "event_id": 4,
+      "purchase_date": "2026-06-06",
+      "total_price": 200000,
+      "status": "paid"
+    },
+    {
+      "id": 337,
+      "user_id": 8,
+      "event_id": 4,
+      "purchase_date": "2026-06-07",
+      "total_price": 200000,
+      "status": "paid"
+    },
+    {
+      "id": 338,
+      "user_id": 9,
+      "event_id": 4,
+      "purchase_date": "2026-06-08",
+      "total_price": 200000,
+      "status": "paid"
+    },
+    {
+      "id": 339,
+      "user_id": 10,
+      "event_id": 4,
+      "purchase_date": "2026-06-09",
+      "total_price": 200000,
+      "status": "paid"
+    },
+    {
+      "id": 340,
+      "user_id": 11,
+      "event_id": 4,
+      "purchase_date": "2026-06-10",
+      "total_price": 200000,
+      "status": "paid"
+    },
+    {
+      "id": 341,
+      "user_id": 2,
+      "event_id": 4,
+      "purchase_date": "2026-06-11",
+      "total_price": 200000,
+      "status": "paid"
+    },
+    {
+      "id": 342,
+      "user_id": 3,
+      "event_id": 4,
+      "purchase_date": "2026-06-12",
+      "total_price": 200000,
+      "status": "paid"
+    },
+    {
+      "id": 343,
+      "user_id": 4,
+      "event_id": 4,
+      "purchase_date": "2026-06-13",
+      "total_price": 200000,
+      "status": "paid"
+    },
+    {
+      "id": 344,
+      "user_id": 5,
+      "event_id": 4,
+      "purchase_date": "2026-06-14",
+      "total_price": 200000,
+      "status": "paid"
+    },
+    {
+      "id": 345,
+      "user_id": 6,
+      "event_id": 4,
+      "purchase_date": "2026-06-15",
+      "total_price": 200000,
+      "status": "paid"
+    },
+    {
+      "id": 346,
+      "user_id": 7,
+      "event_id": 4,
+      "purchase_date": "2026-06-16",
+      "total_price": 200000,
+      "status": "paid"
+    },
+    {
+      "id": 347,
+      "user_id": 8,
+      "event_id": 4,
+      "purchase_date": "2026-06-17",
+      "total_price": 200000,
+      "status": "paid"
+    },
+    {
+      "id": 348,
+      "user_id": 9,
+      "event_id": 4,
+      "purchase_date": "2026-06-18",
+      "total_price": 200000,
+      "status": "paid"
+    },
+    {
+      "id": 349,
+      "user_id": 10,
+      "event_id": 4,
+      "purchase_date": "2026-06-19",
+      "total_price": 200000,
+      "status": "paid"
+    },
+    {
+      "id": 350,
+      "user_id": 11,
+      "event_id": 4,
+      "purchase_date": "2026-06-20",
+      "total_price": 200000,
+      "status": "paid"
+    },
+    {
+      "id": 351,
+      "user_id": 2,
+      "event_id": 4,
+      "purchase_date": "2026-06-21",
+      "total_price": 200000,
+      "status": "paid"
+    },
+    {
+      "id": 352,
+      "user_id": 3,
+      "event_id": 4,
+      "purchase_date": "2026-06-22",
+      "total_price": 200000,
+      "status": "paid"
+    },
+    {
+      "id": 353,
+      "user_id": 4,
+      "event_id": 4,
+      "purchase_date": "2026-06-23",
+      "total_price": 200000,
+      "status": "paid"
+    },
+    {
+      "id": 354,
+      "user_id": 5,
+      "event_id": 4,
+      "purchase_date": "2026-06-24",
+      "total_price": 200000,
+      "status": "paid"
+    },
+    {
+      "id": 355,
+      "user_id": 6,
+      "event_id": 4,
+      "purchase_date": "2026-06-25",
+      "total_price": 200000,
+      "status": "paid"
+    },
+    {
+      "id": 356,
+      "user_id": 7,
+      "event_id": 4,
+      "purchase_date": "2026-06-26",
+      "total_price": 200000,
+      "status": "paid"
+    },
+    {
+      "id": 357,
+      "user_id": 8,
+      "event_id": 4,
+      "purchase_date": "2026-06-27",
+      "total_price": 200000,
+      "status": "paid"
+    },
+    {
+      "id": 358,
+      "user_id": 9,
+      "event_id": 4,
+      "purchase_date": "2026-06-28",
+      "total_price": 200000,
+      "status": "paid"
+    },
+    {
+      "id": 359,
+      "user_id": 10,
+      "event_id": 4,
+      "purchase_date": "2026-06-29",
+      "total_price": 200000,
+      "status": "paid"
+    },
+    {
+      "id": 360,
+      "user_id": 11,
+      "event_id": 4,
+      "purchase_date": "2026-06-30",
+      "total_price": 200000,
+      "status": "paid"
+    },
+    {
+      "id": 361,
+      "user_id": 2,
+      "event_id": 4,
+      "purchase_date": "2026-06-01",
+      "total_price": 200000,
+      "status": "paid"
+    },
+    {
+      "id": 362,
+      "user_id": 3,
+      "event_id": 4,
+      "purchase_date": "2026-06-02",
+      "total_price": 200000,
+      "status": "paid"
+    },
+    {
+      "id": 363,
+      "user_id": 4,
+      "event_id": 4,
+      "purchase_date": "2026-06-03",
+      "total_price": 200000,
+      "status": "paid"
+    },
+    {
+      "id": 364,
+      "user_id": 5,
+      "event_id": 4,
+      "purchase_date": "2026-06-04",
+      "total_price": 200000,
+      "status": "paid"
+    },
+    {
+      "id": 365,
+      "user_id": 6,
+      "event_id": 4,
+      "purchase_date": "2026-06-05",
+      "total_price": 200000,
+      "status": "paid"
+    },
+    {
+      "id": 366,
+      "user_id": 7,
+      "event_id": 4,
+      "purchase_date": "2026-06-06",
+      "total_price": 200000,
+      "status": "paid"
+    },
+    {
+      "id": 367,
+      "user_id": 8,
+      "event_id": 4,
+      "purchase_date": "2026-06-07",
+      "total_price": 200000,
+      "status": "paid"
+    },
+    {
+      "id": 368,
+      "user_id": 9,
+      "event_id": 4,
+      "purchase_date": "2026-06-08",
+      "total_price": 200000,
+      "status": "paid"
+    },
+    {
+      "id": 369,
+      "user_id": 10,
+      "event_id": 4,
+      "purchase_date": "2026-06-09",
+      "total_price": 200000,
+      "status": "paid"
+    },
+    {
+      "id": 370,
+      "user_id": 11,
+      "event_id": 4,
+      "purchase_date": "2026-06-10",
+      "total_price": 200000,
+      "status": "paid"
+    },
+    {
+      "id": 371,
+      "user_id": 2,
+      "event_id": 4,
+      "purchase_date": "2026-06-11",
+      "total_price": 200000,
+      "status": "paid"
+    },
+    {
+      "id": 372,
+      "user_id": 3,
+      "event_id": 4,
+      "purchase_date": "2026-06-12",
+      "total_price": 200000,
+      "status": "paid"
+    },
+    {
+      "id": 373,
+      "user_id": 4,
+      "event_id": 4,
+      "purchase_date": "2026-06-13",
+      "total_price": 200000,
+      "status": "paid"
+    },
+    {
+      "id": 374,
+      "user_id": 5,
+      "event_id": 4,
+      "purchase_date": "2026-06-14",
+      "total_price": 200000,
+      "status": "paid"
+    },
+    {
+      "id": 375,
+      "user_id": 6,
+      "event_id": 4,
+      "purchase_date": "2026-06-15",
+      "total_price": 200000,
+      "status": "paid"
+    },
+    {
+      "id": 376,
+      "user_id": 7,
+      "event_id": 4,
+      "purchase_date": "2026-06-16",
+      "total_price": 200000,
+      "status": "paid"
+    },
+    {
+      "id": 377,
+      "user_id": 8,
+      "event_id": 4,
+      "purchase_date": "2026-06-17",
+      "total_price": 200000,
+      "status": "paid"
+    },
+    {
+      "id": 378,
+      "user_id": 9,
+      "event_id": 4,
+      "purchase_date": "2026-06-18",
+      "total_price": 200000,
+      "status": "paid"
+    },
+    {
+      "id": 379,
+      "user_id": 10,
+      "event_id": 4,
+      "purchase_date": "2026-06-19",
+      "total_price": 200000,
+      "status": "paid"
+    },
+    {
+      "id": 380,
+      "user_id": 11,
+      "event_id": 4,
+      "purchase_date": "2026-06-20",
+      "total_price": 200000,
+      "status": "paid"
+    },
+    {
+      "id": 381,
+      "user_id": 2,
+      "event_id": 5,
+      "purchase_date": "2026-06-01",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 382,
+      "user_id": 3,
+      "event_id": 5,
+      "purchase_date": "2026-06-02",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 383,
+      "user_id": 4,
+      "event_id": 5,
+      "purchase_date": "2026-06-03",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 384,
+      "user_id": 5,
+      "event_id": 5,
+      "purchase_date": "2026-06-04",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 385,
+      "user_id": 6,
+      "event_id": 5,
+      "purchase_date": "2026-06-05",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 386,
+      "user_id": 7,
+      "event_id": 5,
+      "purchase_date": "2026-06-06",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 387,
+      "user_id": 8,
+      "event_id": 5,
+      "purchase_date": "2026-06-07",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 388,
+      "user_id": 9,
+      "event_id": 5,
+      "purchase_date": "2026-06-08",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 389,
+      "user_id": 10,
+      "event_id": 5,
+      "purchase_date": "2026-06-09",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 390,
+      "user_id": 11,
+      "event_id": 5,
+      "purchase_date": "2026-06-10",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 391,
+      "user_id": 2,
+      "event_id": 5,
+      "purchase_date": "2026-06-11",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 392,
+      "user_id": 3,
+      "event_id": 5,
+      "purchase_date": "2026-06-12",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 393,
+      "user_id": 4,
+      "event_id": 5,
+      "purchase_date": "2026-06-13",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 394,
+      "user_id": 5,
+      "event_id": 5,
+      "purchase_date": "2026-06-14",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 395,
+      "user_id": 6,
+      "event_id": 5,
+      "purchase_date": "2026-06-15",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 396,
+      "user_id": 7,
+      "event_id": 5,
+      "purchase_date": "2026-06-16",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 397,
+      "user_id": 8,
+      "event_id": 5,
+      "purchase_date": "2026-06-17",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 398,
+      "user_id": 9,
+      "event_id": 5,
+      "purchase_date": "2026-06-18",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 399,
+      "user_id": 10,
+      "event_id": 5,
+      "purchase_date": "2026-06-19",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 400,
+      "user_id": 11,
+      "event_id": 5,
+      "purchase_date": "2026-06-20",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 401,
+      "user_id": 2,
+      "event_id": 5,
+      "purchase_date": "2026-06-21",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 402,
+      "user_id": 3,
+      "event_id": 5,
+      "purchase_date": "2026-06-22",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 403,
+      "user_id": 4,
+      "event_id": 5,
+      "purchase_date": "2026-06-23",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 404,
+      "user_id": 5,
+      "event_id": 5,
+      "purchase_date": "2026-06-24",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 405,
+      "user_id": 6,
+      "event_id": 5,
+      "purchase_date": "2026-06-25",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 406,
+      "user_id": 7,
+      "event_id": 5,
+      "purchase_date": "2026-06-26",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 407,
+      "user_id": 8,
+      "event_id": 5,
+      "purchase_date": "2026-06-27",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 408,
+      "user_id": 9,
+      "event_id": 5,
+      "purchase_date": "2026-06-28",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 409,
+      "user_id": 10,
+      "event_id": 5,
+      "purchase_date": "2026-06-29",
+      "total_price": 250000,
+      "status": "paid"
+    },
+    {
+      "id": 410,
+      "user_id": 11,
+      "event_id": 5,
+      "purchase_date": "2026-06-30",
+      "total_price": 250000,
+      "status": "paid"
+    }
+  ]
+}
