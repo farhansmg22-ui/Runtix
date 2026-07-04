@@ -81,6 +81,14 @@ export default function EventDetail() {
           ...event,
           current_participants: event.current_participants + 1
         });
+
+        // Trik Real-Time Rekapan Admin menggunakan localStorage
+        const existingSales = localStorage.getItem('runtix_total_sales') ? parseInt(localStorage.getItem('runtix_total_sales')!) : 330;
+        const existingRevenue = localStorage.getItem('runtix_total_revenue') ? parseInt(localStorage.getItem('runtix_total_revenue')!) : 102500000;
+
+        localStorage.setItem('runtix_total_sales', (existingSales + 1).toString());
+        localStorage.setItem('runtix_total_revenue', (existingRevenue + event.price).toString());
+
         setCheckoutSuccess(true);
       } else {
         setError('Payment simulation failed. Invalid event reference.');
@@ -290,17 +298,15 @@ export default function EventDetail() {
         </div>
       </div>
 
-      {/* FIXED CSS LAYER: Interactive Checkout Modal */}
+      {/* POPUP MODAL PAYMENTS */}
       {checkoutOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 font-sans sm:p-0">
           
-          {/* Latar belakang gelap dan blur dipisah murni di sini agar tidak memengaruhi kotak putih */}
           <div 
             className="fixed inset-0 bg-slate-950/60 backdrop-blur-sm transition-opacity z-10" 
             onClick={() => !checkoutSuccess && setCheckoutOpen(false)}
           ></div>
 
-          {/* Kotak Modal Putih Utama: Diberikan z-20 agar naik ke atas dan terlihat jernih */}
           <div className="bg-white rounded-3xl text-left overflow-hidden shadow-2xl transform transition-all sm:max-w-lg sm:w-full border border-slate-100 z-20 relative animate-fade-in">
             
             {checkoutSuccess ? (
@@ -348,7 +354,7 @@ export default function EventDetail() {
                 </button>
               </div>
             ) : (
-              /* CHECKOUT FORM & GATEWAY SIMULATION */
+              /* CHECKOUT FORM */
               <form onSubmit={handleCheckoutSubmit} className="p-6 sm:p-8 space-y-6">
                 <div className="flex justify-between items-center border-b border-slate-100 pb-4">
                   <div>
@@ -370,7 +376,6 @@ export default function EventDetail() {
                   </div>
                 )}
 
-                {/* Summary */}
                 <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100 flex gap-4 items-center">
                   <img 
                     src={event.image_url} 
@@ -385,7 +390,6 @@ export default function EventDetail() {
                   </div>
                 </div>
 
-                {/* Select Payment Method */}
                 <div className="space-y-3">
                   <label className="block text-xs font-black uppercase tracking-wider text-slate-400">
                     Select Payment Channel
@@ -430,7 +434,6 @@ export default function EventDetail() {
                   </div>
                 </div>
 
-                {/* Interactive simulated fields based on type */}
                 <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
                   {paymentMethod === 'va' && (
                     <div className="space-y-2 text-center py-2">
@@ -438,6 +441,7 @@ export default function EventDetail() {
                       <div className="bg-white px-4 py-2.5 rounded-xl border border-slate-200 font-mono text-base font-black text-slate-800 tracking-widest inline-block select-all cursor-pointer">
                         80777{user?.id ? '2241' : '9982'}{event.id}
                       </div>
+                      <span className="block text-[9px] text-slate-400 font-semibold">Klik "Confirm & Pay" setelah menyalin nomor simulasi di atas.</span>
                     </div>
                   )}
                   {paymentMethod === 'gopay' && (
@@ -450,7 +454,6 @@ export default function EventDetail() {
                           className="w-32 h-32"
                         />
                       </div>
-        
                     </div>
                   )}
                   {paymentMethod === 'cc' && (
@@ -479,7 +482,6 @@ export default function EventDetail() {
                   )}
                 </div>
 
-                {/* Final pay button */}
                 <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
                   <div>
                     <span className="block text-[10px] text-slate-400 font-bold uppercase">Grand Total Cost</span>
