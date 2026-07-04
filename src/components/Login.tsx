@@ -17,24 +17,11 @@ export default function Login() {
   // Handle redirect after login
   const from = (location.state as any)?.from?.pathname || '/';
 
-  const handleQuickSelect = (role: 'admin' | 'user') => {
-    setIsLogin(true);
-    if (role === 'admin') {
-      setEmail('admin@runtix.id');
-      setPassword('admin123');
-    } else {
-      setEmail('budi@gmail.com');
-      setPassword('password123');
-    }
-    setError('');
-  };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
     setLoading(true);
 
-    // Dibuat simulasi jeda loading sebentar biar kelihatan realistis saat presentasi
     setTimeout(() => {
       try {
         let mockUser = {
@@ -44,25 +31,26 @@ export default function Login() {
           role: 'user'
         };
 
-        // Jika email mengandung kata admin, atau menggunakan quick-login admin, set sebagai Admin
-        if (email === 'admin@runtix.id' || email.includes('admin')) {
+        // Mengamankan hak akses admin: Hanya bisa masuk jika email & password ini tepat
+        if (email === 'admin@runtix.id' && password === 'admin123') {
           mockUser.name = 'Admin RunTix';
           mockUser.role = 'admin';
+        } else if (email === 'admin@runtix.id' && password !== 'admin123') {
+          setError('Password admin salah!');
+          setLoading(false);
+          return;
         }
 
         const mockToken = 'mock-jwt-token-runtix-2026';
-        
-        // Simpan sesi login lokal
         setSession(mockToken, mockUser);
         
-        // Redirect berdasarkan role akun
         if (mockUser.role === 'admin') {
           navigate('/admin/dashboard');
         } else {
           navigate(from, { replace: true });
         }
       } catch (err: any) {
-        setError('Failed to authenticate simulated login');
+        setError('Failed to authenticate');
       } finally {
         setLoading(false);
       }
@@ -198,31 +186,6 @@ export default function Login() {
                 {isLogin ? "Don't have an account? Sign up" : 'Already registered? Sign in'}
               </button>
             </div>
-          </div>
-        </div>
-
-        {/* Pitch Quick Demo Account Selector Panel */}
-        <div className="mt-6 bg-slate-100/80 rounded-2xl p-5 border border-slate-200/50">
-          <h4 className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-3 text-center">
-            🏟️ Pitch Presentation Quick-Login
-          </h4>
-          <div className="grid grid-cols-2 gap-3">
-            <button
-              onClick={() => handleQuickSelect('user')}
-              className="flex flex-col items-center justify-center p-3 rounded-xl bg-white border border-slate-200/80 hover:border-[#e86f2c]/50 text-left transition-all active:scale-[0.98] cursor-pointer shadow-sm group"
-            >
-              <span className="text-[10px] font-bold text-[#e86f2c] uppercase tracking-wide">Customer Role</span>
-              <span className="text-xs font-black text-slate-800 mt-0.5 group-hover:text-[#1a3b6c]">Budi Santoso</span>
-              <span className="text-[10px] text-slate-400">budi@gmail.com</span>
-            </button>
-            <button
-              onClick={() => handleQuickSelect('admin')}
-              className="flex flex-col items-center justify-center p-3 rounded-xl bg-white border border-slate-200/80 hover:border-[#e86f2c]/50 text-left transition-all active:scale-[0.98] cursor-pointer shadow-sm group"
-            >
-              <span className="text-[10px] font-bold text-[#e86f2c] uppercase tracking-wide">Pitch Admin</span>
-              <span className="text-xs font-black text-slate-800 mt-0.5 group-hover:text-[#1a3b6c]">Admin RunTix</span>
-              <span className="text-[10px] text-slate-400">admin@runtix.id</span>
-            </button>
           </div>
         </div>
       </div>
