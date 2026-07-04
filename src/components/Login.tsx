@@ -34,35 +34,39 @@ export default function Login() {
     setError('');
     setLoading(true);
 
-    const endpoint = isLogin ? '/api/auth/login' : '/api/auth/register';
-    const payload = isLogin ? { email, password } : { name, email, password };
+    // Dibuat simulasi jeda loading sebentar biar kelihatan realistis saat presentasi
+    setTimeout(() => {
+      try {
+        let mockUser = {
+          id: 'mock-user-123',
+          name: name || 'Budi Santoso',
+          email: email,
+          role: 'user'
+        };
 
-    try {
-      const response = await fetch(endpoint, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      });
+        // Jika email mengandung kata admin, atau menggunakan quick-login admin, set sebagai Admin
+        if (email === 'admin@runtix.id' || email.includes('admin')) {
+          mockUser.name = 'Admin RunTix';
+          mockUser.role = 'admin';
+        }
 
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.message || 'Something went wrong');
+        const mockToken = 'mock-jwt-token-runtix-2026';
+        
+        // Simpan sesi login lokal
+        setSession(mockToken, mockUser);
+        
+        // Redirect berdasarkan role akun
+        if (mockUser.role === 'admin') {
+          navigate('/admin/dashboard');
+        } else {
+          navigate(from, { replace: true });
+        }
+      } catch (err: any) {
+        setError('Failed to authenticate simulated login');
+      } finally {
+        setLoading(false);
       }
-
-      setSession(data.token, data.user);
-      
-      // Redirect based on user role
-      if (data.user.role === 'admin') {
-        navigate('/admin/dashboard');
-      } else {
-        navigate(from, { replace: true });
-      }
-    } catch (err: any) {
-      setError(err.message || 'Failed to authenticate');
-    } finally {
-      setLoading(false);
-    }
+    }, 800);
   };
 
   return (
