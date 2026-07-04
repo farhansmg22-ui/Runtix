@@ -4,7 +4,6 @@ import { getUser, getAuthHeaders } from '../lib/auth';
 import { Event } from '../types';
 import Header from './Header';
 
-// Database statis cadangan agar halaman detail langsung mengenali id event
 const staticEvents: Event[] = [
   {
     id: "1",
@@ -82,12 +81,30 @@ export default function EventDetail() {
           current_participants: event.current_participants + 1
         });
 
-        // Trik Real-Time Rekapan Admin menggunakan localStorage
+        // 1. Catat Akumulasi Angka
         const existingSales = localStorage.getItem('runtix_total_sales') ? parseInt(localStorage.getItem('runtix_total_sales')!) : 330;
         const existingRevenue = localStorage.getItem('runtix_total_revenue') ? parseInt(localStorage.getItem('runtix_total_revenue')!) : 102500000;
 
         localStorage.setItem('runtix_total_sales', (existingSales + 1).toString());
         localStorage.setItem('runtix_total_revenue', (existingRevenue + event.price).toString());
+
+        // 2. Catat Log Baris Transaksi Nama Pembeli Baru
+        const newPurchase = {
+          buyerName: user?.name || 'Farhan Rizky Pratama',
+          buyerEmail: user?.email || 'farhan@gmail.com',
+          eventTitle: event.title,
+          purchaseDate: new Date().toISOString().split('T')[0],
+          price: event.price
+        };
+
+        const existingPurchasesRaw = localStorage.getItem('runtix_recent_purchases');
+        let currentPurchasesList = [];
+        if (existingPurchasesRaw) {
+          currentPurchasesList = JSON.parse(existingPurchasesRaw);
+        }
+        
+        // Simpan transaksi terbaru di posisi paling atas tabel
+        localStorage.setItem('runtix_recent_purchases', JSON.stringify([newPurchase, ...currentPurchasesList]));
 
         setCheckoutSuccess(true);
       } else {
@@ -154,7 +171,6 @@ export default function EventDetail() {
     <div className="min-h-screen bg-slate-50 font-sans text-slate-800 pb-16">
       <Header />
 
-      {/* Hero Banner Area */}
       <div className="relative h-96 bg-slate-900 text-white overflow-hidden">
         <img 
           src={event.image_url} 
@@ -190,11 +206,9 @@ export default function EventDetail() {
         </div>
       </div>
 
-      {/* Main Grid content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
           
-          {/* Details Content column */}
           <div className="lg:col-span-2 space-y-8">
             <div className="bg-white p-6 sm:p-8 rounded-2xl border border-slate-100 shadow-sm space-y-6">
               <h2 className="text-xl font-black text-slate-950 border-b border-slate-100 pb-3">
@@ -208,7 +222,6 @@ export default function EventDetail() {
               </p>
             </div>
 
-            {/* Runner's Entitlements Bundle */}
             <div className="bg-white p-6 sm:p-8 rounded-2xl border border-slate-100 shadow-sm">
               <h2 className="text-xl font-black text-slate-950 border-b border-slate-100 pb-3 mb-6">
                 🛍️ Runner's Race Kit Entitlements
@@ -238,7 +251,6 @@ export default function EventDetail() {
             </div>
           </div>
 
-          {/* Sidebar Ticket Pricing Card column */}
           <div className="space-y-6">
             <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-lg sticky top-24">
               <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1">RACE TICKET COST</span>
@@ -298,7 +310,6 @@ export default function EventDetail() {
         </div>
       </div>
 
-      {/* POPUP MODAL PAYMENTS */}
       {checkoutOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 font-sans sm:p-0">
           
@@ -310,7 +321,6 @@ export default function EventDetail() {
           <div className="bg-white rounded-3xl text-left overflow-hidden shadow-2xl transform transition-all sm:max-w-lg sm:w-full border border-slate-100 z-20 relative animate-fade-in">
             
             {checkoutSuccess ? (
-              /* SUCCESS VIEW */
               <div className="p-8 text-center space-y-6">
                 <div className="w-16 h-16 rounded-full bg-emerald-50 text-emerald-500 flex items-center justify-center mx-auto shadow-sm">
                   <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
@@ -354,7 +364,6 @@ export default function EventDetail() {
                 </button>
               </div>
             ) : (
-              /* CHECKOUT FORM */
               <form onSubmit={handleCheckoutSubmit} className="p-6 sm:p-8 space-y-6">
                 <div className="flex justify-between items-center border-b border-slate-100 pb-4">
                   <div>
