@@ -285,8 +285,11 @@ export default function LandingPage() {
             </div>
           </div>
           <p className="text-center text-xs text-slate-500 font-semibold">
-            &copy; 2026 RunTix.id. Seeded with 102M IDR targets for Business Venture Assignment. All rights reserved.
+            &copy; 2026 RunTix.id.
           </p>
+          <p className="text-center text-[11px] text-slate-400 font-bold mt-2 tracking-wide">
+  Developed by: <span className="text-[#e86f2c]">farhanrzky_p</span>
+</p>
         </div>
       </footer>
     </div>
