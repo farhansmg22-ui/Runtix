@@ -438,7 +438,6 @@ export default function EventDetail() {
                       <div className="bg-white px-4 py-2.5 rounded-xl border border-slate-200 font-mono text-base font-black text-slate-800 tracking-widest inline-block select-all cursor-pointer">
                         80777{user?.id ? '2241' : '9982'}{event.id}
                       </div>
-                      <span className="block text-[9px] text-slate-400 font-semibold">Klik "Confirm & Pay" setelah menyalin nomor simulasi di atas.</span>
                     </div>
                   )}
                   {paymentMethod === 'gopay' && (
