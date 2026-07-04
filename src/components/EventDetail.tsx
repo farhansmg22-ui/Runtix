@@ -450,9 +450,7 @@ export default function EventDetail() {
                           className="w-32 h-32"
                         />
                       </div>
-                      <span className="block text-[9px] text-slate-400 font-semibold text-center max-w-[320px]">
-                        Bisa dicoba scan pakai HP pas presentasi! Setelah itu klik "Confirm & Pay" untuk simulasi pelunasan instan.
-                      </span>
+        
                     </div>
                   )}
                   {paymentMethod === 'cc' && (
