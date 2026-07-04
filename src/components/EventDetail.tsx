@@ -50,7 +50,7 @@ export default function EventDetail() {
   const initialEvent = staticEvents.find(ev => ev.id === id) || null;
 
   const [event, setEvent] = useState<Event | null>(initialEvent);
-  const [loading, setLoading] = useState(false); // Langsung false karena data sudah siap dibaca secara lokal
+  const [loading, setLoading] = useState(false); 
   const [purchasing, setPurchasing] = useState(false);
   const [checkoutOpen, setCheckoutOpen] = useState(false);
   const [paymentMethod, setPaymentMethod] = useState('va'); // 'va' | 'gopay' | 'cc'
@@ -58,7 +58,6 @@ export default function EventDetail() {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    // Tetap biarkan fetch berjaga-jaga jika backend aktif, namun di-catch dengan aman tanpa merusak tampilan
     fetch(`/api/events/${id}`)
       .then((res) => {
         if (!res.ok) throw new Error('Using fallback local event configuration');
@@ -77,10 +76,9 @@ export default function EventDetail() {
     setError('');
     setPurchasing(true);
 
-    // Mensimulasikan jaringan proses transaksi pembayaran tiket secara lokal dalam 800ms
+    // Mensimulasikan jeda pemrosesan transaksi pembayaran
     setTimeout(() => {
       if (event) {
-        // Tambahkan jumlah peserta secara lokal sebagai efek simulasi sukses beli tiket
         setEvent({
           ...event,
           current_participants: event.current_participants + 1
@@ -90,7 +88,7 @@ export default function EventDetail() {
         setError('Payment simulation failed. Invalid event reference.');
       }
       setPurchasing(false);
-    }, 800);
+    }, 1500); // Diperlama sedikit agar animasi loading terasa memproses pembayaran sungguhan
   };
 
   const formatIDR = (num: number) => {
@@ -422,7 +420,7 @@ export default function EventDetail() {
                         }`}
                       >
                         <span className="text-lg">📱</span>
-                        <span className="text-[10px] font-black uppercase">GoPay / OVO</span>
+                        <span className="text-[10px] font-black uppercase">QRIS / GoPay</span>
                       </button>
                       <button
                         type="button"
@@ -442,17 +440,28 @@ export default function EventDetail() {
                   {/* Interactive simulated fields based on type */}
                   <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
                     {paymentMethod === 'va' && (
-                      <div className="space-y-1">
-                        <span className="block text-[10px] font-bold text-slate-400 uppercase">Simulated Destination Bank</span>
-                        <span className="block text-xs font-black text-slate-800">Bank Central Asia (BCA) Virtual Account</span>
-                        <span className="block text-[10px] text-slate-400">Transaction clears automatically in 1 second.</span>
+                      <div className="space-y-2 text-center py-2">
+                        <span className="block text-[10px] font-black text-slate-400 uppercase tracking-wider">BCA Virtual Account Number</span>
+                        <div className="bg-white px-4 py-2.5 rounded-xl border border-slate-200 font-mono text-base font-black text-slate-800 tracking-widest inline-block select-all cursor-pointer">
+                          80777{user?.id ? '2241' : '9982'}{event.id}
+                        </div>
+                        <span className="block text-[9px] text-slate-400 font-semibold">Klik "Confirm & Pay" setelah menyalin nomor simulasi di atas.</span>
                       </div>
                     )}
                     {paymentMethod === 'gopay' && (
-                      <div className="space-y-1">
-                        <span className="block text-[10px] font-bold text-slate-400 uppercase">Interactive wallet verification</span>
-                        <span className="block text-xs font-black text-slate-800">Simulate direct scan and mobile app token pin.</span>
-                        <span className="block text-[10px] text-slate-400">Ensures seamless payment on the go.</span>
+                      <div className="space-y-3 flex flex-col items-center py-2">
+                        <span className="block text-[10px] font-black text-slate-400 uppercase tracking-wider text-center">QRIS - PITCH INVOICE SCANNER</span>
+                        {/* Menggunakan API QR otomatis agar memunculkan QR Code tiruan yang dinamis */}
+                        <div className="bg-white p-2 rounded-xl border border-slate-200 shadow-sm">
+                          <img 
+                            src={`https://api.qrserver.com/v1/create-qr-code/?size=130x130&data=runtix-invoice-${event.id}`} 
+                            alt="QRIS Code Prototype" 
+                            className="w-32 h-32"
+                          />
+                        </div>
+                        <span className="block text-[9px] text-slate-400 font-semibold text-center max-w-[320px]">
+                          Bisa dicoba scan pakai HP pas presentasi! Setelah itu klik "Confirm & Pay" untuk simulasi pelunasan instan.
+                        </span>
                       </div>
                     )}
                     {paymentMethod === 'cc' && (
