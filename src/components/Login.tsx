@@ -24,9 +24,20 @@ export default function Login() {
 
     setTimeout(() => {
       try {
+        // Logika Dinamis: Jika user mendaftar lewat tab "Sign Up", gunakan nama yang diketiknya.
+        // Jika langsung Sign In tanpa mengetik nama, sistem otomatis mengambil nama depan dari Email-nya.
+        let dipslayName = name;
+        if (!isLogin && name) {
+          dipslayName = name;
+        } else {
+          // Mengambil teks sebelum tanda '@' di email lalu mengubah huruf pertamanya jadi besar
+          const nameFromEmail = email.split('@')[0];
+          dipslayName = nameFromEmail.charAt(0).toUpperCase() + nameFromEmail.slice(1);
+        }
+
         let mockUser = {
           id: 'mock-user-123',
-          name: name || 'Budi Santoso',
+          name: dipslayName,
           email: email,
           role: 'user'
         };
@@ -100,7 +111,7 @@ export default function Login() {
                   required
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  placeholder="e.g. Farhan Wijaya"
+                  placeholder="e.g. Farhan Rizky Pratama"
                   className="appearance-none block w-full px-4 py-3 border border-slate-200 rounded-xl shadow-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#1a3b6c] focus:border-[#1a3b6c] sm:text-sm text-slate-900 bg-slate-50/50 transition-colors"
                 />
               </div>
