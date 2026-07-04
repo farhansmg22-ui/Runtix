@@ -8,7 +8,6 @@ import {
   BarChart, Bar, Cell
 } from 'recharts';
 
-// Data analitik simulasi dasar sebagai standar awal visualisasi dasbor
 const mockAnalyticsData: AnalyticsData = {
   kpis: {
     totalRevenue: 102500000, 
@@ -48,38 +47,42 @@ export default function AdminDashboard() {
   const navigate = useNavigate();
   const user = getUser();
 
-  // Inisialisasi State Dinamis: Menghitung akumulasi real-time dari transaksi pembeli baru
   const [data, setData] = useState<AnalyticsData | null>(() => {
     const savedSales = localStorage.getItem('runtix_total_sales');
     const savedRevenue = localStorage.getItem('runtix_total_revenue');
+    const savedPurchases = localStorage.getItem('runtix_recent_purchases');
 
-    if (savedSales || savedRevenue) {
-      const activeSales = savedSales ? parseInt(savedSales) : mockAnalyticsData.kpis.totalTicketsSold;
-      const activeRevenue = savedRevenue ? parseInt(savedRevenue) : mockAnalyticsData.kpis.totalRevenue;
-      const activeProfit = activeRevenue - mockAnalyticsData.kpis.totalExpenses;
-
-      return {
-        ...mockAnalyticsData,
-        kpis: {
-          ...mockAnalyticsData.kpis,
-          totalTicketsSold: activeSales,
-          totalRevenue: activeRevenue,
-          totalProfit: activeProfit
-        },
-        salesTrend: [
-          ...mockAnalyticsData.salesTrend.slice(0, 3),
-          { name: 'Minggu 4', revenue: activeRevenue }
-        ],
-        costVsRevenue: [
-          { 
-            name: 'Venture Metrics', 
-            "Modal Awal (Expenses)": mockAnalyticsData.kpis.totalExpenses, 
-            "Revenue Bulan 2": activeRevenue 
-          }
-        ]
-      };
+    let activeSales = savedSales ? parseInt(savedSales) : mockAnalyticsData.kpis.totalTicketsSold;
+    let activeRevenue = savedRevenue ? parseInt(savedRevenue) : mockAnalyticsData.kpis.totalRevenue;
+    let activeProfit = activeRevenue - mockAnalyticsData.kpis.totalExpenses;
+    
+    // Gabungkan riwayat pembelian baru di atas riwayat lama bawaan prototype
+    let activePurchasesList = mockAnalyticsData.recentPurchases;
+    if (savedPurchases) {
+      activePurchasesList = [...JSON.parse(savedPurchases), ...mockAnalyticsData.recentPurchases];
     }
-    return mockAnalyticsData;
+
+    return {
+      ...mockAnalyticsData,
+      kpis: {
+        ...mockAnalyticsData.kpis,
+        totalTicketsSold: activeSales,
+        totalRevenue: activeRevenue,
+        totalProfit: activeProfit
+      },
+      salesTrend: [
+        ...mockAnalyticsData.salesTrend.slice(0, 3),
+        { name: 'Minggu 4', revenue: activeRevenue }
+      ],
+      costVsRevenue: [
+        { 
+          name: 'Venture Metrics', 
+          "Modal Awal (Expenses)": mockAnalyticsData.kpis.totalExpenses, 
+          "Revenue Bulan 2": activeRevenue 
+        }
+      ],
+      recentPurchases: activePurchasesList
+    };
   });
 
   const [loading, setLoading] = useState(false);
@@ -97,7 +100,6 @@ export default function AdminDashboard() {
         return res.json();
       })
       .then((payload) => {
-        // Jika backend aktif, prioritaskan data backend
         setData(payload);
       })
       .catch((err) => {
@@ -217,7 +219,6 @@ export default function AdminDashboard() {
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         
-        {/* Pitch Pitch Header banner */}
         <div className="bg-[#1a3b6c] rounded-3xl p-6 sm:p-8 text-white flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-10 shadow-lg relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent skew-x-12 animate-pulse pointer-events-none"></div>
           <div className="relative z-10">
@@ -238,7 +239,8 @@ export default function AdminDashboard() {
                 if (confirm('Restore default presentation parameters?')) {
                   localStorage.removeItem('runtix_total_sales');
                   localStorage.removeItem('runtix_total_revenue');
-                  setData(mockAnalyticsData);
+                  localStorage.removeItem('runtix_recent_purchases');
+                  window.location.reload();
                 }
               }}
               className="px-4 py-2.5 rounded-xl border border-white/20 bg-white/10 hover:bg-white/20 text-xs font-black cursor-pointer transition-all active:scale-95 text-white z-20 relative"
@@ -248,7 +250,6 @@ export default function AdminDashboard() {
           </div>
         </div>
 
-        {/* KPI Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
           {kpiList.map((kpi, idx) => (
             <div key={idx} className="bg-white rounded-2xl border border-slate-100 p-6 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
@@ -264,10 +265,8 @@ export default function AdminDashboard() {
           ))}
         </div>
 
-        {/* Charts Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-10">
           
-          {/* Sales Trend (Line Chart) */}
           <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm lg:col-span-2 flex flex-col h-[380px]">
             <div className="flex justify-between items-center mb-4">
               <div>
@@ -301,7 +300,6 @@ export default function AdminDashboard() {
             </div>
           </div>
 
-          {/* Cost vs Revenue Comparison (Dual Bar Chart) */}
           <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex flex-col h-[380px]">
             <div className="mb-4">
               <h3 className="text-sm font-black text-slate-900 uppercase tracking-wider">CAPITAL COST VS MONTH 2 REVENUE</h3>
@@ -325,10 +323,8 @@ export default function AdminDashboard() {
 
         </div>
 
-        {/* Row 2: Event Popularity Bar Chart & Expenses Form */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-10">
           
-          {/* Event Popularity Bar Chart */}
           <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm lg:col-span-2 flex flex-col h-[380px]">
             <div className="mb-4">
               <h3 className="text-sm font-black text-slate-900 uppercase tracking-wider">REVENUE PER CHAMPIONSHIP EVENT</h3>
@@ -352,7 +348,6 @@ export default function AdminDashboard() {
             </div>
           </div>
 
-          {/* Business Expenses Simulator Form */}
           <div className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex flex-col justify-between h-[380px]">
             <div>
               <div className="mb-4">
@@ -360,7 +355,6 @@ export default function AdminDashboard() {
                 <p className="text-[10px] text-slate-400 font-semibold">Simulate digital marketing or hosting expenditures</p>
               </div>
 
-              {/* Expenses List */}
               <div className="space-y-3 max-h-40 overflow-y-auto mb-4 border-b border-slate-50 pb-4">
                 {data.expensesList.map((ex) => (
                   <div key={ex.id} className="flex justify-between items-center text-xs py-1">
@@ -371,7 +365,6 @@ export default function AdminDashboard() {
               </div>
             </div>
 
-            {/* Input Form */}
             <form onSubmit={submitExpense} className="space-y-3">
               <div>
                 <input 
@@ -409,7 +402,7 @@ export default function AdminDashboard() {
 
         </div>
 
-        {/* Row 3: Recent Buyer Table */}
+        {/* TABEL DATA DINAMIS */}
         <div className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
           <div className="px-6 py-5 border-b border-slate-100">
             <h3 className="text-sm font-black text-slate-900 uppercase tracking-wider">LATEST ATHLETE BOOKINGS</h3>
