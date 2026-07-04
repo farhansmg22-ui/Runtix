@@ -3,9 +3,46 @@ import { useNavigate } from 'react-router-dom';
 import { Event } from '../types';
 import Header from './Header';
 
+// Data cadangan langsung agar muncul di Vercel tanpa perlu menyalakan backend server
+const staticEvents: Event[] = [
+  {
+    id: "1",
+    title: "BTN Jakarta International Marathon 2026",
+    date: "2026-06-14",
+    location: "Gelora Bung Karno Jakarta",
+    description: "The premium international marathon running through the main landmarks of Jakarta, offering...",
+    image_url: "https://images.unsplash.com/photo-1502224562085-639556652f33?auto=format&fit=crop&q=80&w=1200",
+    price: 350000,
+    current_participants: 100,
+    max_participants: 500
+  },
+  {
+    id: "2",
+    title: "Borobudur Marathon 2026",
+    date: "2026-08-20",
+    location: "Taman Lumbini Borobudur, Magelang",
+    description: "Run through cultural heritage and scenic local villages around the majestic Borobudur Temple,...",
+    image_url: "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&q=80&w=1200",
+    price: 250000,
+    current_participants: 150,
+    max_participants: 500
+  },
+  {
+    id: "3",
+    title: "Semarang 10k 2026",
+    date: "2026-12-15",
+    location: "Balaikota Semarang",
+    description: "A nostalgic running journey exploring the historical Old Town (Kota Lama) of Semarang wi...",
+    image_url: "https://images.unsplash.com/photo-1486218119243-13883505764c?auto=format&fit=crop&q=80&w=1200",
+    price: 150000,
+    current_participants: 80,
+    max_participants: 300
+  }
+];
+
 export default function ExploreEvents() {
-  const [events, setEvents] = useState<Event[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [events, setEvents] = useState<Event[]>(staticEvents); // Menggunakan data statis sebagai nilai awal
+  const [loading, setLoading] = useState(false); // Langsung set ke false agar tidak macet di loading loop
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedLocation, setSelectedLocation] = useState('all');
 
@@ -15,12 +52,12 @@ export default function ExploreEvents() {
     fetch('/api/events')
       .then((res) => res.json())
       .then((data) => {
-        setEvents(data);
-        setLoading(false);
+        if (data && data.length > 0) {
+          setEvents(data);
+        }
       })
       .catch((err) => {
-        console.error('Error fetching events:', err);
-        setLoading(false);
+        console.log('Menggunakan data statis cadangan karena backend offline.');
       });
   }, []);
 
@@ -46,12 +83,13 @@ export default function ExploreEvents() {
                           ev.description.toLowerCase().includes(searchTerm.toLowerCase()) || 
                           ev.location.toLowerCase().includes(searchTerm.toLowerCase());
     
+    // Logika pencocokan lokasi wilayah
     const matchesLocation = selectedLocation === 'all' || ev.location.toLowerCase().includes(selectedLocation.toLowerCase());
     
     return matchesSearch && matchesLocation;
   });
 
-  // Extract unique locations for dropdown filter
+  // Daftar region pilihan filter
   const locations = ['all', 'Jakarta', 'Borobudur', 'Semarang', 'Bandung', 'Bali'];
 
   return (
