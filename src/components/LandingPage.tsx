@@ -125,30 +125,6 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Trust & Pitch Stats Banner */}
-      <section className="bg-white py-8 border-b border-slate-100 shadow-sm relative z-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center divide-y md:divide-y-0 md:divide-x divide-slate-100">
-            <div className="pt-4 md:pt-0">
-              <span className="block text-3xl font-black text-[#1a3b6c]">102 JUTA</span>
-              <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">Pitch Revenue (M2)</span>
-            </div>
-            <div className="pt-4 md:pt-0">
-              <span className="block text-3xl font-black text-[#e86f2c]">410+</span>
-              <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">Seeded Registrations</span>
-            </div>
-            <div className="pt-4 md:pt-0">
-              <span className="block text-3xl font-black text-[#1a3b6c]">99%</span>
-              <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">Gross Profit Margin</span>
-            </div>
-            <div className="pt-4 md:pt-0">
-              <span className="block text-3xl font-black text-[#e86f2c]">5 / 5</span>
-              <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">Elite Race Alliances</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Events Showcase Section */}
       <section id="events-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
