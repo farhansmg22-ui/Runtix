@@ -46,14 +46,13 @@ export default function EventDetail() {
   const navigate = useNavigate();
   const user = getUser();
 
-  // Cari event yang cocok dari data statis sebagai nilai awal agar tidak melempar error Event Not Found
   const initialEvent = staticEvents.find(ev => ev.id === id) || null;
 
   const [event, setEvent] = useState<Event | null>(initialEvent);
   const [loading, setLoading] = useState(false); 
   const [purchasing, setPurchasing] = useState(false);
   const [checkoutOpen, setCheckoutOpen] = useState(false);
-  const [paymentMethod, setPaymentMethod] = useState('va'); // 'va' | 'gopay' | 'cc'
+  const [paymentMethod, setPaymentMethod] = useState('va'); 
   const [checkoutSuccess, setCheckoutSuccess] = useState(false);
   const [error, setError] = useState('');
 
@@ -76,7 +75,6 @@ export default function EventDetail() {
     setError('');
     setPurchasing(true);
 
-    // Mensimulasikan jeda pemrosesan transaksi pembayaran
     setTimeout(() => {
       if (event) {
         setEvent({
@@ -88,7 +86,7 @@ export default function EventDetail() {
         setError('Payment simulation failed. Invalid event reference.');
       }
       setPurchasing(false);
-    }, 1500); // Diperlama sedikit agar animasi loading terasa memproses pembayaran sungguhan
+    }, 1500); 
   };
 
   const formatIDR = (num: number) => {
@@ -292,222 +290,215 @@ export default function EventDetail() {
         </div>
       </div>
 
-      {/* Interactive Checkout Modal (Slide in overlay) */}
+      {/* FIXED CSS LAYER: Interactive Checkout Modal */}
       {checkoutOpen && (
-        <div className="fixed inset-0 z-50 overflow-y-auto font-sans" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-          <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 font-sans sm:p-0">
+          
+          {/* Latar belakang gelap dan blur dipisah murni di sini agar tidak memengaruhi kotak putih */}
+          <div 
+            className="fixed inset-0 bg-slate-950/60 backdrop-blur-sm transition-opacity z-10" 
+            onClick={() => !checkoutSuccess && setCheckoutOpen(false)}
+          ></div>
+
+          {/* Kotak Modal Putih Utama: Diberikan z-20 agar naik ke atas dan terlihat jernih */}
+          <div className="bg-white rounded-3xl text-left overflow-hidden shadow-2xl transform transition-all sm:max-w-lg sm:w-full border border-slate-100 z-20 relative animate-fade-in">
             
-            {/* Dark background dim */}
-            <div 
-              className="fixed inset-0 bg-slate-950/60 backdrop-blur-sm transition-opacity" 
-              aria-hidden="true"
-              onClick={() => !checkoutSuccess && setCheckoutOpen(false)}
-            ></div>
+            {checkoutSuccess ? (
+              /* SUCCESS VIEW */
+              <div className="p-8 text-center space-y-6">
+                <div className="w-16 h-16 rounded-full bg-emerald-50 text-emerald-500 flex items-center justify-center mx-auto shadow-sm">
+                  <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-2xl font-black text-slate-900 tracking-tight">Payment Successful!</h3>
+                  <p className="text-slate-500 font-medium text-sm mt-1">Your marathon bib slot is locked.</p>
+                </div>
 
-            {/* Trick to center modal on desktop */}
-            <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
-
-            {/* Modal Box */}
-            <div className="inline-block align-bottom bg-white rounded-3xl text-left overflow-hidden shadow-2xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full border border-slate-100">
-              
-              {checkoutSuccess ? (
-                /* SUCCESS VIEW */
-                <div className="p-8 text-center space-y-6">
-                  <div className="w-16 h-16 rounded-full bg-emerald-50 text-emerald-500 flex items-center justify-center mx-auto shadow-sm">
-                    <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
+                <div className="p-5 bg-slate-50 rounded-2xl text-left border border-slate-100 space-y-3">
+                  <div className="flex justify-between items-center text-xs">
+                    <span className="text-slate-400 font-semibold">Event Name</span>
+                    <span className="text-slate-800 font-black text-right max-w-[200px] truncate">{event.title}</span>
                   </div>
+                  <div className="flex justify-between items-center text-xs">
+                    <span className="text-slate-400 font-semibold">Athlete Name</span>
+                    <span className="text-slate-800 font-black">{user?.name}</span>
+                  </div>
+                  <div className="flex justify-between items-center text-xs">
+                    <span className="text-slate-400 font-semibold">BIB Entry Status</span>
+                    <span className="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-black text-[9px] uppercase tracking-wide">PAID - VALIDATED</span>
+                  </div>
+                  <div className="border-t border-dashed border-slate-200 pt-3 flex justify-between items-center text-sm">
+                    <span className="text-slate-400 font-bold">Total Paid</span>
+                    <span className="text-[#1a3b6c] font-black">{formatIDR(event.price)}</span>
+                  </div>
+                </div>
+
+                <button
+                  type="button"
+                  onClick={() => {
+                    setCheckoutOpen(false);
+                    setCheckoutSuccess(false);
+                    navigate('/');
+                  }}
+                  className="w-full py-3.5 px-4 bg-[#1a3b6c] hover:bg-[#e86f2c] text-white rounded-xl text-xs font-black tracking-widest uppercase shadow transition-all cursor-pointer"
+                >
+                  RETURN TO HOME
+                </button>
+              </div>
+            ) : (
+              /* CHECKOUT FORM & GATEWAY SIMULATION */
+              <form onSubmit={handleCheckoutSubmit} className="p-6 sm:p-8 space-y-6">
+                <div className="flex justify-between items-center border-b border-slate-100 pb-4">
                   <div>
-                    <h3 className="text-2xl font-black text-slate-900 tracking-tight">Payment Successful!</h3>
-                    <p className="text-slate-500 font-medium text-sm mt-1">Your marathon bib slot is locked.</p>
+                    <h3 className="text-xl font-black text-slate-900 tracking-tight">RunTix Secure Payment</h3>
+                    <p className="text-xs text-slate-400 font-medium">Verify your registration parameters</p>
                   </div>
-
-                  <div className="p-5 bg-slate-50 rounded-2xl text-left border border-slate-100 space-y-3">
-                    <div className="flex justify-between items-center text-xs">
-                      <span className="text-slate-400 font-semibold">Event Name</span>
-                      <span className="text-slate-800 font-black text-right max-w-[200px] truncate">{event.title}</span>
-                    </div>
-                    <div className="flex justify-between items-center text-xs">
-                      <span className="text-slate-400 font-semibold">Athlete Name</span>
-                      <span className="text-slate-800 font-black">{user?.name}</span>
-                    </div>
-                    <div className="flex justify-between items-center text-xs">
-                      <span className="text-slate-400 font-semibold">BIB Entry Status</span>
-                      <span className="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-black text-[9px] uppercase tracking-wide">PAID - VALIDATED</span>
-                    </div>
-                    <div className="border-t border-dashed border-slate-200 pt-3 flex justify-between items-center text-sm">
-                      <span className="text-slate-400 font-bold">Total Paid</span>
-                      <span className="text-[#1a3b6c] font-black">{formatIDR(event.price)}</span>
-                    </div>
-                  </div>
-
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setCheckoutOpen(false);
-                      setCheckoutSuccess(false);
-                      navigate('/');
-                    }}
-                    className="w-full py-3.5 px-4 bg-[#1a3b6c] hover:bg-[#e86f2c] text-white rounded-xl text-xs font-black tracking-widest uppercase shadow transition-all cursor-pointer"
+                  <button 
+                    type="button" 
+                    onClick={() => setCheckoutOpen(false)}
+                    className="text-slate-400 hover:text-slate-600 font-bold text-lg"
                   >
-                    RETURN TO HOME
+                    &times;
                   </button>
                 </div>
-              ) : (
-                /* CHECKOUT FORM & GATEWAY SIMULATION */
-                <form onSubmit={handleCheckoutSubmit} className="p-6 sm:p-8 space-y-6">
-                  <div className="flex justify-between items-center border-b border-slate-100 pb-4">
-                    <div>
-                      <h3 className="text-xl font-black text-slate-900 tracking-tight">RunTix Secure Payment</h3>
-                      <p className="text-xs text-slate-400 font-medium">Verify your registration parameters</p>
-                    </div>
-                    <button 
-                      type="button" 
-                      onClick={() => setCheckoutOpen(false)}
-                      className="text-slate-400 hover:text-slate-600 font-bold text-lg"
+
+                {error && (
+                  <div className="bg-red-50 text-red-700 p-4 rounded-xl text-xs font-semibold border border-red-100">
+                    {error}
+                  </div>
+                )}
+
+                {/* Summary */}
+                <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100 flex gap-4 items-center">
+                  <img 
+                    src={event.image_url} 
+                    alt="" 
+                    className="w-12 h-12 object-cover rounded-xl"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="flex-1 min-w-0">
+                    <span className="block text-[9px] font-bold text-slate-400 uppercase tracking-widest">{formatDate(event.date)}</span>
+                    <h4 className="text-xs font-black text-slate-800 truncate">{event.title}</h4>
+                    <span className="block text-xs font-extrabold text-[#e86f2c]">{formatIDR(event.price)}</span>
+                  </div>
+                </div>
+
+                {/* Select Payment Method */}
+                <div className="space-y-3">
+                  <label className="block text-xs font-black uppercase tracking-wider text-slate-400">
+                    Select Payment Channel
+                  </label>
+                  <div className="grid grid-cols-3 gap-3">
+                    <button
+                      type="button"
+                      onClick={() => setPaymentMethod('va')}
+                      className={`p-3.5 rounded-xl border flex flex-col items-center justify-center gap-1.5 transition-all cursor-pointer ${
+                        paymentMethod === 'va'
+                          ? 'border-[#1a3b6c] bg-[#1a3b6c]/5 text-[#1a3b6c] ring-2 ring-[#1a3b6c]/10 font-bold'
+                          : 'border-slate-200 hover:border-slate-300'
+                      }`}
                     >
-                      &times;
+                      <span className="text-lg">🏦</span>
+                      <span className="text-[10px] font-black uppercase">Virtual Acc</span>
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setPaymentMethod('gopay')}
+                      className={`p-3.5 rounded-xl border flex flex-col items-center justify-center gap-1.5 transition-all cursor-pointer ${
+                        paymentMethod === 'gopay'
+                          ? 'border-[#1a3b6c] bg-[#1a3b6c]/5 text-[#1a3b6c] ring-2 ring-[#1a3b6c]/10 font-bold'
+                          : 'border-slate-200 hover:border-slate-300'
+                      }`}
+                    >
+                      <span className="text-lg">📱</span>
+                      <span className="text-[10px] font-black uppercase">QRIS / GoPay</span>
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setPaymentMethod('cc')}
+                      className={`p-3.5 rounded-xl border flex flex-col items-center justify-center gap-1.5 transition-all cursor-pointer ${
+                        paymentMethod === 'cc'
+                          ? 'border-[#1a3b6c] bg-[#1a3b6c]/5 text-[#1a3b6c] ring-2 ring-[#1a3b6c]/10 font-bold'
+                          : 'border-slate-200 hover:border-slate-300'
+                      }`}
+                    >
+                      <span className="text-lg">💳</span>
+                      <span className="text-[10px] font-black uppercase">Credit Card</span>
                     </button>
                   </div>
+                </div>
 
-                  {error && (
-                    <div className="bg-red-50 text-red-700 p-4 rounded-xl text-xs font-semibold border border-red-100">
-                      {error}
+                {/* Interactive simulated fields based on type */}
+                <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                  {paymentMethod === 'va' && (
+                    <div className="space-y-2 text-center py-2">
+                      <span className="block text-[10px] font-black text-slate-400 uppercase tracking-wider">BCA Virtual Account Number</span>
+                      <div className="bg-white px-4 py-2.5 rounded-xl border border-slate-200 font-mono text-base font-black text-slate-800 tracking-widest inline-block select-all cursor-pointer">
+                        80777{user?.id ? '2241' : '9982'}{event.id}
+                      </div>
+                      <span className="block text-[9px] text-slate-400 font-semibold">Klik "Confirm & Pay" setelah menyalin nomor simulasi di atas.</span>
                     </div>
                   )}
-
-                  {/* Summary */}
-                  <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100 flex gap-4 items-center">
-                    <img 
-                      src={event.image_url} 
-                      alt="" 
-                      className="w-12 h-12 object-cover rounded-xl"
-                      referrerPolicy="no-referrer"
-                    />
-                    <div className="flex-1 min-w-0">
-                      <span className="block text-[9px] font-bold text-slate-400 uppercase tracking-widest">{formatDate(event.date)}</span>
-                      <h4 className="text-xs font-black text-slate-800 truncate">{event.title}</h4>
-                      <span className="block text-xs font-extrabold text-[#e86f2c]">{formatIDR(event.price)}</span>
-                    </div>
-                  </div>
-
-                  {/* Select Payment Method */}
-                  <div className="space-y-3">
-                    <label className="block text-xs font-black uppercase tracking-wider text-slate-400">
-                      Select Payment Channel
-                    </label>
-                    <div className="grid grid-cols-3 gap-3">
-                      <button
-                        type="button"
-                        onClick={() => setPaymentMethod('va')}
-                        className={`p-3.5 rounded-xl border flex flex-col items-center justify-center gap-1.5 transition-all cursor-pointer ${
-                          paymentMethod === 'va'
-                            ? 'border-[#1a3b6c] bg-[#1a3b6c]/5 text-[#1a3b6c] ring-2 ring-[#1a3b6c]/10 font-bold'
-                            : 'border-slate-200 hover:border-slate-300'
-                        }`}
-                      >
-                        <span className="text-lg">🏦</span>
-                        <span className="text-[10px] font-black uppercase">Virtual Acc</span>
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => setPaymentMethod('gopay')}
-                        className={`p-3.5 rounded-xl border flex flex-col items-center justify-center gap-1.5 transition-all cursor-pointer ${
-                          paymentMethod === 'gopay'
-                            ? 'border-[#1a3b6c] bg-[#1a3b6c]/5 text-[#1a3b6c] ring-2 ring-[#1a3b6c]/10 font-bold'
-                            : 'border-slate-200 hover:border-slate-300'
-                        }`}
-                      >
-                        <span className="text-lg">📱</span>
-                        <span className="text-[10px] font-black uppercase">QRIS / GoPay</span>
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => setPaymentMethod('cc')}
-                        className={`p-3.5 rounded-xl border flex flex-col items-center justify-center gap-1.5 transition-all cursor-pointer ${
-                          paymentMethod === 'cc'
-                            ? 'border-[#1a3b6c] bg-[#1a3b6c]/5 text-[#1a3b6c] ring-2 ring-[#1a3b6c]/10 font-bold'
-                            : 'border-slate-200 hover:border-slate-300'
-                        }`}
-                      >
-                        <span className="text-lg">💳</span>
-                        <span className="text-[10px] font-black uppercase">Credit Card</span>
-                      </button>
-                    </div>
-                  </div>
-
-                  {/* Interactive simulated fields based on type */}
-                  <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
-                    {paymentMethod === 'va' && (
-                      <div className="space-y-2 text-center py-2">
-                        <span className="block text-[10px] font-black text-slate-400 uppercase tracking-wider">BCA Virtual Account Number</span>
-                        <div className="bg-white px-4 py-2.5 rounded-xl border border-slate-200 font-mono text-base font-black text-slate-800 tracking-widest inline-block select-all cursor-pointer">
-                          80777{user?.id ? '2241' : '9982'}{event.id}
-                        </div>
-                        <span className="block text-[9px] text-slate-400 font-semibold">Klik "Confirm & Pay" setelah menyalin nomor simulasi di atas.</span>
+                  {paymentMethod === 'gopay' && (
+                    <div className="space-y-3 flex flex-col items-center py-2">
+                      <span className="block text-[10px] font-black text-slate-400 uppercase tracking-wider text-center">QRIS - PITCH INVOICE SCANNER</span>
+                      <div className="bg-white p-2 rounded-xl border border-slate-200 shadow-sm">
+                        <img 
+                          src={`https://api.qrserver.com/v1/create-qr-code/?size=130x130&data=runtix-invoice-${event.id}`} 
+                          alt="QRIS Code Prototype" 
+                          className="w-32 h-32"
+                        />
                       </div>
-                    )}
-                    {paymentMethod === 'gopay' && (
-                      <div className="space-y-3 flex flex-col items-center py-2">
-                        <span className="block text-[10px] font-black text-slate-400 uppercase tracking-wider text-center">QRIS - PITCH INVOICE SCANNER</span>
-                        {/* Menggunakan API QR otomatis agar memunculkan QR Code tiruan yang dinamis */}
-                        <div className="bg-white p-2 rounded-xl border border-slate-200 shadow-sm">
-                          <img 
-                            src={`https://api.qrserver.com/v1/create-qr-code/?size=130x130&data=runtix-invoice-${event.id}`} 
-                            alt="QRIS Code Prototype" 
-                            className="w-32 h-32"
+                      <span className="block text-[9px] text-slate-400 font-semibold text-center max-w-[320px]">
+                        Bisa dicoba scan pakai HP pas presentasi! Setelah itu klik "Confirm & Pay" untuk simulasi pelunasan instan.
+                      </span>
+                    </div>
+                  )}
+                  {paymentMethod === 'cc' && (
+                    <div className="space-y-3">
+                      <div className="grid grid-cols-2 gap-3">
+                        <div>
+                          <span className="block text-[9px] font-bold text-slate-400 uppercase mb-1">Card Number</span>
+                          <input 
+                            type="text" 
+                            placeholder="4111 2222 3333 4444" 
+                            disabled 
+                            className="w-full px-3 py-1.5 border border-slate-200 rounded-lg text-xs bg-white text-slate-400"
                           />
                         </div>
-                        <span className="block text-[9px] text-slate-400 font-semibold text-center max-w-[320px]">
-                          Bisa dicoba scan pakai HP pas presentasi! Setelah itu klik "Confirm & Pay" untuk simulasi pelunasan instan.
-                        </span>
-                      </div>
-                    )}
-                    {paymentMethod === 'cc' && (
-                      <div className="space-y-3">
-                        <div className="grid grid-cols-2 gap-3">
-                          <div>
-                            <span className="block text-[9px] font-bold text-slate-400 uppercase mb-1">Card Number</span>
-                            <input 
-                              type="text" 
-                              placeholder="4111 2222 3333 4444" 
-                              disabled 
-                              className="w-full px-3 py-1.5 border border-slate-200 rounded-lg text-xs bg-white text-slate-400"
-                            />
-                          </div>
-                          <div>
-                            <span className="block text-[9px] font-bold text-slate-400 uppercase mb-1">Expiry & CVV</span>
-                            <input 
-                              type="text" 
-                              placeholder="12/29  •••" 
-                              disabled 
-                              className="w-full px-3 py-1.5 border border-slate-200 rounded-lg text-xs bg-white text-slate-400"
-                            />
-                          </div>
+                        <div>
+                          <span className="block text-[9px] font-bold text-slate-400 uppercase mb-1">Expiry & CVV</span>
+                          <input 
+                            type="text" 
+                            placeholder="12/29  •••" 
+                            disabled 
+                            className="w-full px-3 py-1.5 border border-slate-200 rounded-lg text-xs bg-white text-slate-400"
+                          />
                         </div>
                       </div>
-                    )}
-                  </div>
-
-                  {/* Final pay button */}
-                  <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
-                    <div>
-                      <span className="block text-[10px] text-slate-400 font-bold uppercase">Grand Total Cost</span>
-                      <span className="text-lg font-black text-[#1a3b6c]">{formatIDR(event.price)}</span>
                     </div>
-                    <button
-                      type="submit"
-                      disabled={purchasing}
-                      className="px-6 py-3.5 bg-[#e86f2c] hover:bg-[#d45f1b] text-white rounded-xl text-xs font-black tracking-widest uppercase shadow-md transition-all cursor-pointer"
-                    >
-                      {purchasing ? 'PROCESSING...' : 'CONFIRM & PAY'}
-                    </button>
-                  </div>
-                </form>
-              )}
+                  )}
+                </div>
 
-            </div>
+                {/* Final pay button */}
+                <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
+                  <div>
+                    <span className="block text-[10px] text-slate-400 font-bold uppercase">Grand Total Cost</span>
+                    <span className="text-lg font-black text-[#1a3b6c]">{formatIDR(event.price)}</span>
+                  </div>
+                  <button
+                    type="submit"
+                    disabled={purchasing}
+                    className="px-6 py-3.5 bg-[#e86f2c] hover:bg-[#d45f1b] text-white rounded-xl text-xs font-black tracking-widest uppercase shadow-md transition-all cursor-pointer"
+                  >
+                    {purchasing ? 'PROCESSING...' : 'CONFIRM & PAY'}
+                  </button>
+                </div>
+              </form>
+            )}
+
           </div>
         </div>
       )}
