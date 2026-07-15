@@ -11,7 +11,7 @@ const staticEvents: Event[] = [
     date: "2026-06-14",
     location: "Gelora Bung Karno Jakarta",
     description: "The premium international marathon running through the main landmarks of Jakarta, offering...",
-    image_url: "https://images.unsplash.com/photo-1502224562085-639556652f33?auto=format&fit=crop&q=80&w=1200",
+    image_url: https://www.pasteboard.co/eldUrFLE6Vkf.jpg,
     price: 350000,
     current_participants: 100,
     max_participants: 500
